@@ -1,18 +1,77 @@
-.card {
-    background-color: @light-primary;
-    border: 1px solid @light-tertiary;
-    padding: 26px;
-    border-radius: @border-radius-base;
-    margin-bottom: 30px;
+.panel {
+    // background-color: @light-primary;
+    border: 1px solid darken(@light-primary, 7);
+    // // border-radius: @border-radius-base;
+    // margin-bottom: 30px;
+    
+    // & > .panel-body {
+    //   padding-top: 25px;
+    // }
+    
+    // &.panel-block {
+      
+    //   & > .panel-heading {
+    //     background-color: transparent;
+    //     padding-bottom: 0;
+    //     // margin-bottom: 15px;
+        
+    //     .panel-title {
+    //       float: none;
+    //       display: block;
+    //     }
+    //   }
+    // }
+    
+    // .list-group.list-group-panel {
+    //   padding: 0 25px 15px;
+      
+    //   .list-group-item {
+    //     padding-left: 0;
+    //     padding-right: 0;
+    //   }
+    // }
+    
+    // .panel-title {
+    //   padding-top: 0;
+    //   padding-bottom: 10px;
+    //   border-bottom: 3px solid darken(@light-primary, 3);
+    //   margin-bottom: 15px;
+    // }
 
-    h2 {
+    .panel-heading {
+      // padding: 25px;
+      // border-bottom: none;
+      
+      h2 {
+        margin: 25px 10px;
         padding-bottom: 10px;
         border-bottom: 3px solid darken(@light-primary, 3);
-        margin-bottom: 30px;
+        margin-bottom: 0;
+      }
     }
+    
 
-    p, a:not(.btn), li {
-        font-size: @font-size-base * 1.125;
-        line-height: @line-height-base*.95;
+    .panel-body {
+      padding: 25px;
+      
+      // p, a:not(.btn), li {
+      //   font-size: @font-size-base * 1.125;
+      //   line-height: @line-height-base*.95;
+      // }
+      
+      .grid.grid-panel {
+        margin: -25px;
+      }
     }
 }
+
+// ul.list-group-panel .list-group-item,
+// .panel-collapse .list-group-item {
+//   border-top: 2px solid darken(@light-primary, 3);
+// }
+
+// .panel-block .panel-body .grid.grid-panel {
+//   margin: 0 0 15px 0;
+//   border: 1px solid @panel-border;
+//   border-radius: @border-radius-base;
+// }

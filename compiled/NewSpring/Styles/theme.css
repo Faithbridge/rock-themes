@@ -15583,25 +15583,23 @@ div.aspNetDisabled {
 	opacity: 1;
 }
 
-.card {
-	background-color: #ffffff;
-	border: 1px solid #dddddd;
-	padding: 26px;
-	border-radius: 4px;
-	margin-bottom: 30px;
+.panel {
+	border: 1px solid #ededed;
 }
 
-.card h2 {
+.panel .panel-heading h2 {
+	margin: 25px 10px;
 	padding-bottom: 10px;
 	border-bottom: 3px solid #f7f7f7;
-	margin-bottom: 30px;
+	margin-bottom: 0;
 }
 
-.card p,
-.card a:not(.btn),
-.card li {
-	font-size: 18px;
-	line-height: 1.35714286;
+.panel .panel-body {
+	padding: 25px;
+}
+
+.panel .panel-body .grid.grid-panel {
+	margin: -25px;
 }
 
 .navbar-nav.contextsetter,
