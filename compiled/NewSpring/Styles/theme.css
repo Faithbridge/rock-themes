@@ -4,7 +4,7 @@
 */
 
 /*!
- *  Font Awesome 4.4.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 
@@ -13,8 +13,8 @@
 
 @font-face {
 	font-family: 'FontAwesome';
-	src: url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.eot?v=4.4.0');
-	src: url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+	src: url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.eot?v=4.5.0');
+	src: url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('../../../Assets/Fonts/FontAwesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -2632,6 +2632,86 @@
 
 .fa-fonticons:before {
 	content: "\f280";
+}
+
+.fa-reddit-alien:before {
+	content: "\f281";
+}
+
+.fa-edge:before {
+	content: "\f282";
+}
+
+.fa-credit-card-alt:before {
+	content: "\f283";
+}
+
+.fa-codiepie:before {
+	content: "\f284";
+}
+
+.fa-modx:before {
+	content: "\f285";
+}
+
+.fa-fort-awesome:before {
+	content: "\f286";
+}
+
+.fa-usb:before {
+	content: "\f287";
+}
+
+.fa-product-hunt:before {
+	content: "\f288";
+}
+
+.fa-mixcloud:before {
+	content: "\f289";
+}
+
+.fa-scribd:before {
+	content: "\f28a";
+}
+
+.fa-pause-circle:before {
+	content: "\f28b";
+}
+
+.fa-pause-circle-o:before {
+	content: "\f28c";
+}
+
+.fa-stop-circle:before {
+	content: "\f28d";
+}
+
+.fa-stop-circle-o:before {
+	content: "\f28e";
+}
+
+.fa-shopping-bag:before {
+	content: "\f290";
+}
+
+.fa-shopping-basket:before {
+	content: "\f291";
+}
+
+.fa-hashtag:before {
+	content: "\f292";
+}
+
+.fa-bluetooth:before {
+	content: "\f293";
+}
+
+.fa-bluetooth-b:before {
+	content: "\f294";
+}
+
+.fa-percent:before {
+	content: "\f295";
 }
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -9553,7 +9633,7 @@ td.wrap-contents {
 }
 
 .grid {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 .grid .grid-table {
@@ -9860,11 +9940,15 @@ tr.row-highlight td {
 	vertical-align: top !important;
 }
 
-.table > thead > tr.grid-row-bold td {
+.table > tbody > tr.grid-row-bold td {
 	background-color: #303030;
 	color: #ffffff;
 	border-color: #3d3d3d;
 	vertical-align: top !important;
+}
+
+.table > tbody > tr.grid-row-bold:hover td {
+	background-color: #4a4a4a;
 }
 
 .table > tbody > tr.is-inactive > td {
@@ -9903,11 +9987,6 @@ tr.row-highlight td {
 	margin-left: -15px;
 	border-radius: 0;
 	margin-bottom: 15px;
-}
-
-td .photo-icon {
-	opacity: 0.6;
-	min-height: 16px;
 }
 
 /*
@@ -11261,15 +11340,15 @@ table.attribute-grid tr th:nth-child(3) {
 	margin-right: 12px;
 }
 
-.editfamily-list li.member {
+.editgroup-list li.member {
 	min-width: 200px;
 }
 
-.editfamily-list li.member .radio {
+.editgroup-list li.member .radio {
 	margin: 0;
 }
 
-.editfamily-list .groupmembers h4 {
+.editgroup-list .groupmembers h4 {
 	margin-bottom: 4px;
 }
 
@@ -11297,7 +11376,7 @@ span.field-value {
 	border-radius: 4px;
 }
 
-.table-familymembers .radio:first-child {
+.table-groupmembers .radio:first-child {
 	margin-top: 0;
 }
 
@@ -11759,7 +11838,7 @@ iframe.email-body {
   34. Checkbox
   35. Follow button
   36. Range Editors
-
+  37. Custom Buttons
   xx. Misc
 */
 
@@ -12034,7 +12113,12 @@ ul.rocktree ul {
 }
 
 .rocktree .rocktree-item.is-inactive {
-	opacity: .6;
+	color: #636363;
+	opacity: 1;
+}
+
+.rocktree .rocktree-item:not(.is-inactive) {
+	color: #303030;
 }
 
 .rocktree .rocktree-item > i {
@@ -12087,6 +12171,10 @@ ul.rocktree ul {
 
 .treeview {
 	margin-bottom: 15px;
+}
+
+.treeview .treeview-frame {
+	padding-left: 0;
 }
 
 .treeview .treeview-actions {
@@ -12586,6 +12674,10 @@ fieldset .actions {
 	background-color: #6bac43;
 }
 
+.label-tree {
+	background-color: #b8b8b8;
+}
+
 .datepicker {
 	padding: 10px;
 }
@@ -12718,34 +12810,46 @@ fieldset .actions {
 	margin-left: 0;
 }
 
-/*.timepicker-input  {
-  .clearfix();
+.timepicker-input:before,
+.timepicker-input:after {
+	content: " ";
+	display: table;
+}
 
-  .input-group {
-    float: left;
-  }
+.timepicker-input:after {
+	clear: both;
+}
 
-  & i.fa-times {
-    float: left;
-    margin-top: 4px;
-    padding: 6px;
-    cursor: pointer;
+.timepicker-input:before,
+.timepicker-input:after {
+	content: " ";
+	display: table;
+}
 
-    opacity: 0;
-    -webkit-transition: opacity .2s ease-out;
-    -moz-transition: opacity .2s ease-out;
-    -o-transition: opacity .2s ease-out;
-    transition: opacity .2s ease-out;
-  }
+.timepicker-input:after {
+	clear: both;
+}
 
-  &:hover i.fa-times {
-    opacity: 1;
-  }
+.timepicker-input .input-group {
+	float: left;
+}
+
+.timepicker-input i.fa-times {
+	float: left;
+	margin-top: 4px;
+	padding: 6px;
+	cursor: pointer;
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
+}
+
+.timepicker-input:hover i.fa-times {
+	opacity: 1;
 }
 
 .touch .timepicker-input i.fa-times {
-  opacity: 1;
-}*/
+	opacity: 1;
+}
 
 .bootstrap-timepicker {
 	position: relative;
@@ -13148,6 +13252,7 @@ fieldset .actions {
 	margin-bottom: 15px;
 	min-width: 160px;
 	border-radius: 4px;
+	min-height: 90px;
 }
 
 .groupmembers .member .person-image {
@@ -13469,6 +13574,12 @@ ul.list-group-panel .list-group-item:first-child,
 	border-radius: 17.5px;
 }
 
+.photo-round.photo-round-xs {
+	height: 20px;
+	width: 20px;
+	border-radius: 17.5px;
+}
+
 .wizard {
 	background-color: #2a4930;
 	padding: 8px 0;
@@ -13611,6 +13722,10 @@ ul.list-group-panel .list-group-item:first-child,
 
 .date-range-picker .input-group {
 	margin-bottom: 6px;
+}
+
+.btn-copy-to-clipboard:focus {
+	outline: 0;
 }
 
 /*
@@ -15600,6 +15715,13 @@ div.aspNetDisabled {
 
 .panel .panel-body .grid.grid-panel {
 	margin: -25px;
+}
+
+h2.panel--heading {
+	margin: 25px 10px;
+	padding-bottom: 10px;
+	border-bottom: 3px solid #f7f7f7;
+	margin-bottom: 0;
 }
 
 .navbar-nav.contextsetter,
