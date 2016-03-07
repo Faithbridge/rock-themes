@@ -16806,7 +16806,7 @@ table tr td {
 }
 
 .picker .dropdown-menu {
-	width: 100%;
+	max-width: 80vw;
 }
 
 .picker .dropdown-menu .scroll-container {
