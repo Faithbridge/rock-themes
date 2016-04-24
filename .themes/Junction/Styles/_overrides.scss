@@ -1,0 +1,21 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  @include media-query(handheld) {
+    font-size: 100%;
+  }
+}
+
+hr {
+  display: none;
+}
+
+.block-configuration .config-bar {
+    width: 100% !important;
+
+    a {
+        position: relative !important;
+    }
+}
