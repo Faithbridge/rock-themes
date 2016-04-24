@@ -39,7 +39,7 @@
 </script>
 
 <html class="no-js">
-<head runat="server">
+  <head runat="server">
 
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <meta charset="utf-8">
@@ -49,8 +49,6 @@
 
     <script src="<%# ResolveRockUrl("~/Scripts/jquery-1.10.2.min.js" ) %>"></script>
     <script src="<%# ResolveRockUrl("~/Scripts/jquery.jquery-dotimeout.js" ) %>"></script>
-
-    <script src="../../../Plugins/cc_newspring/Blocks/Dashboards/chart.js"></script>
 
     <!-- Typekit -->
     <script src="//use.typekit.net/oby6bqi.js"></script>
@@ -78,15 +76,15 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%# ResolveRockUrl("~/Themes/NewSpring/Assets/Icons/apple.touch.medium.png", true) %>">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%# ResolveRockUrl("~/Themes/NewSpring/Assets/Icons/apple.touch.small.png", true) %>">
     <link rel="apple-touch-icon-precomposed" href="<%# ResolveRockUrl("~/Themes/NewSpring/Assets/Icons/apple.touch.small.png", true) %>">
-</head>
-<body>
+  </head>
+  <body>
 
     <form id="form1" class="hard" runat="server">
-      
+
       <!-- <div class="navbar-mobile-logo">
           <asp:Literal ID="lLogoSvg" runat="server" />
       </div> -->
-      
+
       <section class="one-whole floating soft-half locked-left locked-bottom hard-sides@lap-and-up soft-half-top@lap-and-up  sidenav">
         <a href="//newspring.cc" class="text-light-primary floating__item soft-sides@handheld soft-half-ends@lap-and-up one-whole@lap-and-up plain">
           <div class="floating">
@@ -99,21 +97,21 @@
           </div>
         </a>
       </section>
-      
+
       <div class="newspring-wordmark">
         <h4 class="soft-half flush text-light-primary uppercase watermark visuallyhidden@handheld">
           NewSpring
         </h4>
       </div>
-      
+
       <div id="content-wrapper">
-        
+
         <div class="panel fixed@lap-and-up background--light-primary panel-push-left">
-          <section class="panel__item--right hard flush transition visuallyhidden@handheld five-twelfths@lap-and-up background--fill" style="background-image: url('https://dg0ddngxdz549.cloudfront.net/images/cached/images/remote/http_s3.amazonaws.com/ns.images/newspring/_fpo/fpo.NextSteps_1700_850_90_c1.jpg');">
+          <section class="panel__item--right hard flush transition visuallyhidden@handheld five-twelfths@lap-and-up background--fill" style="background-image: url('https://s3.amazonaws.com/ns.images/newspring/_fpo/fpo.NextSteps.jpg');">
             <div class="ratio__item"></div>
           </section>
         </div>
-        
+
         <section class="relative hard flush scrollable seven-twelfths@lap-and-up">
           <main class="grid">
             <div class="soft-double@lap-and-up soft background--light-primary">
@@ -165,5 +163,5 @@
                 loadChartbeat : function () { oldonload(); loadChartbeat(); };
         })();
     </script>
-</body>
+  </body>
 </html>
