@@ -5584,10 +5584,6 @@ Copyright (c) 2012 Dan Eden*/
 	height: auto !important;
 }
 
-form {
-	height: 100vh;
-}
-
 .form-group {
 	margin-bottom: 30px;
 }
@@ -5622,6 +5618,7 @@ form {
 	font-family: "FontAwesome";
 }
 
+.radio,
 .checkbox-inline,
 .checkbox {
 	display: block;
@@ -5630,15 +5627,20 @@ form {
 	padding: 5px 0;
 }
 
+.radio:after,
 .checkbox-inline:after,
 .checkbox:after {
 	display: none;
 	visibility: hidden;
 }
 
+.radio input,
+.radio .person-picker .picker-label,
+.person-picker .radio .picker-label,
 .checkbox-inline input,
 .checkbox-inline .person-picker .picker-label,
-.person-picker .checkbox-inline .picker-label,
+.person-picker
+  .checkbox-inline .picker-label,
 .checkbox input,
 .checkbox .person-picker .picker-label,
 .person-picker
@@ -5663,9 +5665,13 @@ form {
 	-webkit-appearance: none;
 }
 
+.radio input:before,
+.radio .person-picker .picker-label:before,
+.person-picker .radio .picker-label:before,
 .checkbox-inline input:before,
 .checkbox-inline .person-picker .picker-label:before,
-.person-picker .checkbox-inline .picker-label:before,
+.person-picker
+    .checkbox-inline .picker-label:before,
 .checkbox input:before,
 .checkbox .person-picker .picker-label:before,
 .person-picker
@@ -5681,9 +5687,13 @@ form {
 	border-radius: 50%;
 }
 
+.radio input:checked,
+.radio .person-picker .picker-label:checked,
+.person-picker .radio .picker-label:checked,
 .checkbox-inline input:checked,
 .checkbox-inline .person-picker .picker-label:checked,
-.person-picker .checkbox-inline .picker-label:checked,
+.person-picker
+    .checkbox-inline .picker-label:checked,
 .checkbox input:checked,
 .checkbox .person-picker .picker-label:checked,
 .person-picker
@@ -5691,9 +5701,13 @@ form {
 	background-color: #6bac43;
 }
 
+.radio input:checked:before,
+.radio .person-picker .picker-label:checked:before,
+.person-picker .radio .picker-label:checked:before,
 .checkbox-inline input:checked:before,
 .checkbox-inline .person-picker .picker-label:checked:before,
-.person-picker .checkbox-inline .picker-label:checked:before,
+.person-picker
+      .checkbox-inline .picker-label:checked:before,
 .checkbox input:checked:before,
 .checkbox .person-picker .picker-label:checked:before,
 .person-picker
@@ -6360,6 +6374,7 @@ textarea:focus {
 
 .scrollable {
 	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 ul {
@@ -6540,6 +6555,7 @@ input + .btn,
 .sidenav {
 	background-color: #202020;
 	z-index: 300;
+	position: fixed;
 }
 
 .sidenav h7 {
@@ -9063,7 +9079,6 @@ td {
 }
 
 .sidenav {
-	position: fixed;
 	max-width: 80px;
 	top: 0;
 }
@@ -14762,8 +14777,16 @@ body {
 	font-size: 100%;
 }
 
+#content-wrapper {
+	margin-bottom: 80px;
+}
+
 .panel-push-sidenav {
 	margin-left: 0;
+}
+
+.sidenav h7 {
+	margin-bottom: 0px;
 }
 
 section {

@@ -20,6 +20,7 @@
 
 .scrollable {
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 ul {
@@ -30,6 +31,10 @@ ul {
   
   .actions {
     margin-top: $base-spacing-unit * 2;
+  }
+  
+  @include media-query(handheld) {
+    margin-bottom: 80px;
   }
 }
 
@@ -240,9 +245,9 @@ input + .btn {
 .sidenav {
   background-color: #202020;
   z-index: 300;
+  position: fixed;
   
   @include media-query(lap-and-up) {
-    position: fixed;
     max-width: 80px;
     top: 0;
   }
@@ -260,6 +265,10 @@ input + .btn {
     line-height: 1.125;
     margin-bottom: 10px;
     margin-top: 6px;
+    
+    @include media-query(handheld) {
+      margin-bottom: 0px;
+    }
   }
   
   .small {
