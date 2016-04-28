@@ -16,7 +16,8 @@ form {
 }
 
 .rock-drop-down-list,
-.campus-picker {
+.campus-picker,
+ {
   position: relative;
 
   &:before,
@@ -247,9 +248,24 @@ form {
   }
 }
 
-.control-label {
-  @extend %h5;
+.form-group.address-control {
+  
+  & > label {
+    font-size: 1.25em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+  }
+}
 
+.well > h4 {
+  margin-bottom: 1.5em;
+}
+
+.control-label {
+  font-weight: 500;
+  line-height: 1.125;
+  font-size: .875em;
+  padding-left: 5px;
   color: map-get($colors , dark-secondary);
 
   small {

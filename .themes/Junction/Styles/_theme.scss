@@ -119,6 +119,8 @@ $constraints: extend($constraints, (
   )
 ));
 
+$base-heading-font: "colfax-web";
+
 @import "../../../.remote/Styles/fonts/colfax-hinted/light";
 @import "../../../.remote/Styles/fonts/colfax-hinted/regular";
 @import "../../../.remote/Styles/fonts/colfax-hinted/medium";

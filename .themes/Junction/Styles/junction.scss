@@ -31,14 +31,15 @@ ul {
   .actions {
     margin-top: $base-spacing-unit * 2;
   }
-  
-  @include media-query(lap-and-up) {
-    margin-left: 80px;
-  }
 }
 
-.panel.panel-push-left {
+.panel-push-sidenav {
   z-index: -1;
+  margin-left: 80px;
+  
+  @include media-query(handheld) {
+    margin-left: 0;
+  }
 }
 
 .newspring-wordmark {
@@ -74,26 +75,123 @@ ul {
 }
 
 :focus {
-  border-bottom-width: 3px;
+  border-bottom-width: 2px;
+}
+
+// Form Error
+
+.alert.alert-danger {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-bottom: 1em;
+  color: map-get($colors, alert);
+  
+  strong,
+  p {
+    font-family: $base-heading-font;
+  }
+  
+  p {
+    font-size: 0.875em;
+    margin-top: $base-spacing-unit;
+    font-weight: 500;
+  }
+  
+  ul {
+    font-size: 0.75em;
+    list-style: none;
+    margin-top: $base-spacing-unit / 2;
+  }
+}
+
+.alert.alert-warning {
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.875em;
+  margin-bottom: 1em;
+  color: map-get($colors, alert);
+  
+  & + div {
+    
+    label,
+    input {
+      color: map-get($colors, alert);
+      border-color: map-get($colors, alert);
+    }
+  }
+}
+
+// Form Group Pull
+
+.form-group.pull-right {
+  float: none;
+}
+
+input + .btn {
+  margin-top: $base-spacing-unit;
 }
 
 // Progress Bar
 
 .progress {
+  // width: 100%;
   margin: $base-spacing-unit * 2 auto;
   text-align: center;
+  overflow: visible;
+  background-color: map-get($colors, light-tertiary);
   
-  &:after {
+  &:before {
+    content: '';
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    border-radius: 1000px;
+    background-color: map-get($colors, primary);
     z-index: 1;
-    margin-top: 0px;
+    margin-top: -3px;
+    margin-left: -5px;
   }
   
+  &:after {
+    content: '';
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    border-radius: 1000px;
+    background-color: map-get($colors, light-tertiary);
+    z-index: 1;
+    margin: 0;
+    top: -3px;
+    right: -5px !important;
+    left: auto;
+  }
+  
+  // &:after {
+  //   z-index: 1;
+  //   margin-top: 0px;
+  // }
+  
   .progress-bar {
+    position: relative;
     text-indent: -999999px;
     height: 4px;
-    overflow: hidden;
     background-color: map-get($colors, primary);
     z-index: 2;
+    overflow: visible;
+    
+    &:after {
+      content: '';
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      border-radius: 1000px;
+      background-color: map-get($colors, primary);
+      z-index: 1;
+      display: block;
+      top: -3px;
+      right: -5px;
+    }
     
     // span {
     //   margin-top: $base-spacing-unit;
@@ -559,6 +657,99 @@ section {
   }
 }
 
+.registration-entry {
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .btn {
+    font-weight: 500;
+    
+    &:focus {
+      border-width: 3px;
+    }
+  }
+  
+  .btn-default {
+    color: map-get($colors, dark-tertiary);
+    border-color: map-get($colors, dark-tertiary);
+    border-width: 2px;
+    
+    &:hover {
+      color: map-get($colors, light-primary);
+      background-color: map-get($colors, dark-tertiary);
+    }
+  }
+}
+
+// Needs Work
+
+.col-sm-6 {
+  @extend .one-half;
+  
+  @include media-query(handheld) {
+    @extend .one-whole\@handheld;
+  }
+}
+
+.month-year-picker {
+  margin-left: 3px;
+  // @extend .one-half;
+  // margin-left: -3px;
+  // @extend .grid;
+  // @extend .flush;
+  
+  .input-width-sm {
+    width: 46.5%;
+  }
+  
+  .separator {
+    width: 3%;
+    text-align: center;
+    // position: relative;
+    // display: none;
+    // position: absolute;
+    // width: 100%;
+    // left: $base-spacing-unit / 2;
+    // bottom: 45px;
+    
+    &:before,
+    &:before {
+      position: absolute;
+      color: map-get($colors, dark-tertiary);
+      left: 46%;
+      top: 33px;
+    }
+    
+    &:after {
+      position: absolute;
+      right: 3%;
+      top: 33px;
+      color: map-get($colors, dark-tertiary);
+      
+      @include media-query(handheld) {
+        
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "\f0d7";
+      font-family: "FontAwesome";
+    }
+  }
+}
+
+
+.list-unstyled {
+  list-style: none;
+}
+
+.card-logos {
+  display: none;
+}
+
 .registration-entry h1 {
   @extend h2;
 }
@@ -568,12 +759,54 @@ section {
   @extend h3;
 }
 
+.workflow-entry-panel p + .form-group {
+  margin-top: $base-spacing-unit * 2;
+}
+
 textarea,
 select,
 input {
-  border-width: 3px;
-  border-style: dotted;
+  border-width: 2px;
+  border-style: solid;
   border-top: 0;
   border-right: 0;
   border-left: 0;
+}
+
+.fee-table {
+  @extend .grid;
+  @extend .flush;
+  
+  .row {
+    border-bottom: 2px solid map-get($colors, light-tertiary);
+    margin-bottom: $base-spacing-unit;
+  }
+  
+  .fee-header {
+    padding-bottom: $base-spacing-unit;
+    
+    div[class^="col-"] { 
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    strong {
+      @extend h5;
+    }
+  }
+  
+  .fee-caption,
+  .fee-value {
+    @extend p;
+    font-size: 0.875em;
+    margin-bottom: $base-spacing-unit;
+  }
+}
+
+.fee-totals {
+  text-align: right;
+  
+  & > div {
+    text-align: left;
+  }
 }
