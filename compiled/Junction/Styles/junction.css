@@ -6988,6 +6988,12 @@ input + .btn,
 	float: none !important;
 }
 
+.registration-entry,
+.workflow-entry-panel {
+	max-width: 480px;
+	margin: 0 auto;
+}
+
 .registration-entry h1 {
 	text-align: center;
 }
@@ -7061,7 +7067,7 @@ input + .btn,
 .workflow-entry-panel
 .fee-table .fee-value + .form-group,
 .fee-table .workflow-entry-panel .fee-value + .form-group {
-	margin-top: 40px;
+	margin-top: 60px;
 }
 
 textarea,
