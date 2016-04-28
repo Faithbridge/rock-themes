@@ -179,6 +179,7 @@ input + .btn {
     background-color: map-get($colors, primary);
     z-index: 2;
     overflow: visible;
+    max-width: 100%;
     
     &:after {
       content: '';
@@ -433,7 +434,7 @@ section {
   }
   
   & > div:not(:last-child) {
-    margin-right: $half-spacing-unit/2;
+    margin-right: $half-spacing-unit / 2;
   }
 }
 
@@ -661,6 +662,35 @@ section {
 .workflow-entry-panel {
   max-width: 480px;
   margin: 0 auto;
+  
+  div[for*="State"],
+  div[for*="Country"] { 
+    
+    &:before,
+    &:before {
+      position: absolute;
+      color: map-get($colors, dark-tertiary);
+      left: 46%;
+      top: 33px;
+    }
+    
+    &:after {
+      position: absolute;
+      right: 3%;
+      top: 33px;
+      color: map-get($colors, dark-tertiary);
+      
+      @include media-query(handheld) {
+        
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "\f0d7";
+      font-family: "FontAwesome";
+    }
+  }
 }
 
 .registration-entry {
@@ -699,6 +729,8 @@ section {
   }
 }
 
+
+
 .month-year-picker {
   margin-left: 3px;
   // @extend .one-half;
@@ -713,30 +745,20 @@ section {
   .separator {
     width: 3%;
     text-align: center;
-    // position: relative;
-    // display: none;
-    // position: absolute;
-    // width: 100%;
-    // left: $base-spacing-unit / 2;
-    // bottom: 45px;
     
     &:before,
-    &:before {
+    &:after {
       position: absolute;
       color: map-get($colors, dark-tertiary);
+      top: 24px;
+    }
+    
+    &:before {
       left: 46%;
-      top: 33px;
     }
     
     &:after {
-      position: absolute;
-      right: 3%;
-      top: 33px;
-      color: map-get($colors, dark-tertiary);
-      
-      @include media-query(handheld) {
-        
-      }
+      right: 2%;
     }
 
     &:before,
