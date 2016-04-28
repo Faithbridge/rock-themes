@@ -116,11 +116,11 @@
             </section>
           </div>
 
-          <section class="relative hard flush scrollable seven-twelfths@lap-and-up">
+          <section class="relative hard flush-ends scrollable seven-twelfths@lap-and-up push-double-left flush@handheld soft@handheld">
             <main class="grid">
               <div class="soft-double@lap-and-up soft background--light-primary">
                 <div class="grid__item text-left">
-                  <div class="soft-double@lap-and-up">
+                  <div class="soft-double@lap-and-up push-double-left flush@handheld">
                     <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
                   </div>
                 </div>

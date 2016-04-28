@@ -663,29 +663,16 @@ section {
   max-width: 480px;
   margin: 0 auto;
   
-  div[for*="State"],
-  div[for*="Country"] { 
-    
-    &:before,
-    &:before {
-      position: absolute;
-      color: map-get($colors, dark-tertiary);
-      left: 46%;
-      top: 33px;
-    }
+  label.control-label[for*="State"],
+  .row:last-child label.control-label[for*="tbStreet1"] {
     
     &:after {
       position: absolute;
       right: 3%;
-      top: 33px;
+      top: 22px;
       color: map-get($colors, dark-tertiary);
-      
-      @include media-query(handheld) {
-        
-      }
     }
-
-    &:before,
+    
     &:after {
       content: "\f0d7";
       font-family: "FontAwesome";
