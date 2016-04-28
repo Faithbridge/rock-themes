@@ -5205,7 +5205,7 @@ td {
 }
 
 html {
-	overflow: hidden;
+	overflow: auto;
 }
 
 hr {
@@ -7142,6 +7142,10 @@ input,
 
 .fee-totals > div {
 	text-align: left;
+}
+
+div[id*="pnlSaveAccount"] {
+	display: none;
 }
 
 @media screen and (min-width: 480px) {

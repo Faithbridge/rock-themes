@@ -834,3 +834,7 @@ input {
     text-align: left;
   }
 }
+
+div[id*="pnlSaveAccount"] {
+  display: none;
+}
