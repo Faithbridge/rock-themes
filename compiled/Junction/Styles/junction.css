@@ -4245,6 +4245,7 @@ html.modal--opened .scrollable {
 .one-half,
 .col-sm-6,
 .col-md-6,
+.fee-totals .col-sm-4,
 .two-quarters,
 .three-sixths,
 .four-eighths,
@@ -4787,7 +4788,8 @@ html.modal--opened .scrollable {
 	padding-bottom: 10px;
 }
 
-.soft-half-left {
+.soft-half-left,
+.fee-totals .col-sm-4 {
 	padding-left: 10px;
 }
 
@@ -6675,105 +6677,48 @@ input + .btn,
 	opacity: 0.8;
 }
 
+#updateProgress {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-left: 40px;
+}
+
 .spinner {
-	background-color: #6bac43;
-	position: relative;
+	border-color: #ffffff #6bac43 #ffffff #ffffff;
+	border-width: 7px;
+	-webkit-animation-duration: .85s;
+	animation-duration: .85s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-name: _3VkgS;
+	animation-name: _3VkgS;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	border-radius: 50%;
 	display: inline-block;
-	width: 80px;
-	height: 80px;
-	text-indent: -99999;
-	font-size: 0;
-	border-radius: 50% 47% 0 47%;
-	position: absolute;
-	padding: 0;
-}
-
-.spinner:before {
-	background-color: white;
-}
-
-.spinner:after {
-	background-color: #6bac43;
-}
-
-.spinner.outlined {
-	background-color: transparent;
-	border-color: #6bac43;
-}
-
-.spinner.outlined:before {
-	background-color: transparent;
-	border-color: #6bac43;
-}
-
-.spinner.outlined:after {
-	background-color: transparent;
-	border-color: #6bac43;
-	border-bottom-color: transparent;
-}
-
-.spinner.fluid {
-	width: 100%;
-	height: auto;
-	padding-bottom: 100%;
-}
-
-.spinner.icon--small {
-	width: 40px;
-	height: 40px;
-}
-
-.spinner.icon--large {
-	width: 160px;
-	height: 160px;
-}
-
-.spinner.outlined {
-	border-width: 3px;
+	border-color: #6bac43 transparent #6bac43 #6bac43;
+	width: 60px;
+	height: 60px;
+	border-width: 5px;
 	border-style: solid;
+	background: transparent;
+	left: 47%;
 }
 
-.spinner:before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 47.5%;
-	padding-bottom: 45.625%;
-	height: auto;
-	margin-top: -20.625%;
-	margin-left: -21.25%;
-	border-radius: 0 36% 0 0;
-}
-
-.spinner:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 15%;
-	height: 33.75%;
-	margin-top: -8.75%;
-	margin-left: -5%;
-	border-radius: 50% 50% 0 0/25% 25% 0 0;
-}
-
-.spinner.outlined:before {
-	border-width: 3px;
-	border-style: solid;
-}
-
-.spinner.outlined:after {
-	border-width: 3px;
-	border-style: solid;
-}
-
-.spinner > div {
+.spinner .rect1,
+.spinner .rect2,
+.spinner .rect3,
+.spinner .rect4,
+.spinner .rect5 {
 	display: none;
 }
 
-.spinner > div:not(:last-child) {
-	margin-right: 5px;
+.spinner:before,
+.spinner:after {
+	display: none;
 }
 
 .modal-content .modal-header {
@@ -7142,6 +7087,15 @@ input,
 
 .fee-totals > div {
 	text-align: left;
+}
+
+.fee-totals label {
+	padding-left: 0;
+	margin-bottom: 20px;
+}
+
+.panel__item--right {
+	right: -7px;
 }
 
 div[id*="pnlSaveAccount"] {
@@ -8590,7 +8544,8 @@ td {
 	width: 41.6666666%;
 }
 
-.seven-twelfths\@lap-and-up {
+.seven-twelfths\@lap-and-up,
+#updateProgress {
 	width: 58.3333333%;
 }
 
@@ -9040,7 +8995,8 @@ td {
 	padding-left: 0;
 }
 
-.visuallyhidden\@lap-and-up {
+.visuallyhidden\@lap-and-up,
+.visible-xs-inline {
 	position: absolute !important;
 	overflow: hidden !important;
 	clip: rect(0 0 0 0) !important;
@@ -9750,7 +9706,8 @@ td {
 }
 
 .one-whole\@lap,
-.col-sm-6 {
+.col-sm-6,
+.fee-totals .col-sm-4 {
 	width: 100%;
 }
 
@@ -10342,6 +10299,14 @@ td {
 	margin: -1px !important;
 	padding: 0 !important;
 	border: 0 !important;
+}
+
+.fee-table .fee-value {
+	padding-top: 10px;
+}
+
+.fee-totals .col-sm-4 {
+	padding-left: 20px;
 }
 
 }
@@ -14183,7 +14148,9 @@ td {
 .one-whole\@handheld,
 .col-sm-3,
 .col-md-6,
-.col-sm-6 {
+#updateProgress,
+.col-sm-6,
+.fee-totals .col-sm-4 {
 	width: 100%;
 }
 
@@ -14797,8 +14764,24 @@ section {
 	padding: 0;
 }
 
+#updateProgress {
+	margin-left: 0;
+}
+
+.spinner {
+	left: 42%;
+}
+
 .modal-content .modal-body .picker .btn:not(:last-child) {
 	margin-right: 0;
+}
+
+.fee-table .fee-value {
+	padding-top: 10px;
+}
+
+.fee-totals .col-sm-4 {
+	padding-left: 20px;
 }
 
 }
@@ -15586,6 +15569,38 @@ section {
 
 100% {
 	opacity: 0;
+}
+
+}
+
+@-webkit-keyframes _3VkgS {
+
+0% {
+	transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+
+100% {
+	transform: rotate(1turn);
+	-ms-transform: rotate(1turn);
+	-webkit-transform: rotate(1turn);
+}
+
+}
+
+@keyframes _3VkgS {
+
+0% {
+	transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+
+100% {
+	transform: rotate(1turn);
+	-ms-transform: rotate(1turn);
+	-webkit-transform: rotate(1turn);
 }
 
 }

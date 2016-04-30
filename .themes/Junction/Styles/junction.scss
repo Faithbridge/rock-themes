@@ -352,6 +352,10 @@ section {
   // }
 }
 
+.visible-xs-inline {
+  @extend .visuallyhidden\@lap-and-up;
+}
+
 .shell {
 	max-width: 500px;
 	margin: 0 auto;
@@ -427,23 +431,76 @@ section {
   }
 }
 
-.spinner {
+#updateProgress {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 40px;
+  @extend .seven-twelfths\@lap-and-up;
   
-  @include newspring--icon($base-spacing-unit * 4, map-get($colors, primary));
-  position: absolute;
-  padding: 0;
-  
-  // &:before,
-  // &:after {
-  //   display: none;
+  // @include media-query(lap) {
+  //   margin-left: 0;
+  //   @extend .one-whole\@lap;
   // }
   
-  & > div {
+  @include media-query(handheld) {
+    margin-left: 0;
+    @extend .one-whole\@handheld;
+  }
+}
+
+.spinner {
+  border-color: $light-color map-get($colors, primary) $light-color $light-color;
+  border-width: 7px;
+  -webkit-animation-duration: .85s;
+  animation-duration: .85s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: _3VkgS;
+  animation-name: _3VkgS;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  border-radius: 50%;
+  display: inline-block;
+  border-color: map-get($colors, primary) transparent map-get($colors, primary) map-get($colors, primary);
+  width: 60px;
+  height: 60px;
+  border-width: 5px;
+  border-style: solid;
+  background: transparent;
+  left: 47%;
+  
+  .rect1,
+  .rect2,
+  .rect3,
+  .rect4,
+  .rect5 {
     display: none;
   }
   
-  & > div:not(:last-child) {
-    margin-right: $half-spacing-unit / 2;
+  &:before,
+  &:after {
+    display: none;
+  }
+  
+  @include media-query(handheld) {
+    left: 42%;
+  }
+}
+
+@keyframes _3VkgS {
+  0% {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1turn);
+    -ms-transform: rotate(1turn);
+    -webkit-transform: rotate(1turn);
   }
 }
 
@@ -765,7 +822,6 @@ section {
   }
 }
 
-
 .list-unstyled {
   list-style: none;
 }
@@ -819,6 +875,18 @@ input {
     }
   }
   
+  
+  .fee-value {
+    
+    @include media-query(lap) {
+      padding-top: $base-spacing-unit / 2;
+    }
+    
+    @include media-query(handheld) {
+      padding-top: $base-spacing-unit / 2;
+    }
+  }
+  
   .fee-caption,
   .fee-value {
     @extend p;
@@ -833,6 +901,30 @@ input {
   & > div {
     text-align: left;
   }
+  
+  .col-sm-4 {
+    @extend .one-half;
+    @extend .soft-half-left;
+    
+    @include media-query(lap) {
+      @extend .one-whole\@lap;
+      padding-left: $base-spacing-unit;
+    }
+    
+    @include media-query(handheld) {
+      @extend .one-whole\@handheld;
+      padding-left: $base-spacing-unit;
+    }
+  }
+  
+  label {
+    padding-left: 0;
+    margin-bottom: $base-spacing-unit;
+  }
+}
+
+.panel__item--right {
+  right: -7px;
 }
 
 div[id*="pnlSaveAccount"] {
