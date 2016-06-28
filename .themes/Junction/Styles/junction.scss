@@ -39,6 +39,7 @@ ol {
 }
 
 li > ul {
+  margin-top: $base-spacing-unit;
   margin-left: $base-spacing-unit;
 }
 

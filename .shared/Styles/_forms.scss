@@ -21,12 +21,41 @@
   span {
     display: none;  
   }
+
+  input {
+    @extend .btn;
+    // text-indent: -9999px;
+    color: transparent;
+    font-size: 0;
+    max-width: 240px;
+
+    &:after {
+      content: "Choose\00a0 File";
+      display: block;
+      color: $brand-color;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1em;
+      padding: $base-spacing-unit / 4 $base-spacing-unit / 2;
+    }
+
+    &:hover {
+      color: transparent;
+
+      &:after {
+        color: $light-color;
+      }
+    }
+  }
 }
 
 .fileupload-group {
 
   .fileupload-thumbnail {
-    margin: $base-spacing-unit $base-spacing-unit / 5;
+    
+    .file-link {
+       margin: $base-spacing-unit / 2 $base-spacing-unit / 4;
+    }
 
     a {
       display: inline-block;
