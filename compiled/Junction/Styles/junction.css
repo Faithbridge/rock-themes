@@ -100,35 +100,30 @@
 .fa-rotate-90 {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 	-webkit-transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	-webkit-transform: rotate(270deg);
-	-ms-transform: rotate(270deg);
 	transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
 	-webkit-transform: scale(-1, 1);
-	-ms-transform: scale(-1, 1);
 	transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
 	-webkit-transform: scale(1, -1);
-	-ms-transform: scale(1, -1);
 	transform: scale(1, -1);
 }
 
@@ -2731,9 +2726,13 @@ h4,
 }
 
 .btn,
+.fileupload-dropzone input,
+.fileupload-dropzone .person-picker .picker-label,
+.person-picker .fileupload-dropzone .picker-label,
 .btn--small,
 .btn--disabled,
 .btn:disabled,
+.fileupload-dropzone input:disabled,
 .btn--corners,
 .btn--light,
 .modal-content .modal-footer a,
@@ -3140,9 +3139,13 @@ textarea[data-value]:not([data-value=""]) {
 }
 
 .btn,
+.fileupload-dropzone input,
+.fileupload-dropzone .person-picker .picker-label,
+.person-picker .fileupload-dropzone .picker-label,
 .btn--small,
 .btn--disabled,
 .btn:disabled,
+.fileupload-dropzone input:disabled,
 .btn--corners,
 .btn--light,
 .modal-content .modal-footer a,
@@ -3167,6 +3170,9 @@ textarea[data-value]:not([data-value=""]) {
 }
 
 .btn:hover,
+.fileupload-dropzone input:hover,
+.fileupload-dropzone .person-picker .picker-label:hover,
+.person-picker .fileupload-dropzone .picker-label:hover,
 .btn--small:hover,
 .btn--disabled:hover,
 .btn--corners:hover,
@@ -3190,14 +3196,20 @@ textarea[data-value]:not([data-value=""]) {
 }
 
 .btn--disabled,
-.btn:disabled {
+.btn:disabled,
+.fileupload-dropzone input:disabled,
+.fileupload-dropzone .person-picker .picker-label:disabled,
+.person-picker .fileupload-dropzone .picker-label:disabled {
 	cursor: text;
 	color: #dddddd;
 	border-color: #dddddd;
 }
 
 .btn--disabled:hover,
-.btn:disabled:hover {
+.btn:disabled:hover,
+.fileupload-dropzone input:disabled:hover,
+.fileupload-dropzone .person-picker .picker-label:disabled:hover,
+.person-picker .fileupload-dropzone .picker-label:disabled:hover {
 	cursor: text;
 	color: #dddddd;
 	background-color: inherit;
@@ -3955,7 +3967,6 @@ html.modal--opened .scrollable {
 	visibility: visible;
 	margin-bottom: 0;
 	-webkit-transform: translateY(-20px);
-	    -ms-transform: translateY(-20px);
 	        transform: translateY(-20px);
 	left: 5px;
 	font-family: "colfax-web";
@@ -4048,16 +4059,14 @@ html.modal--opened .scrollable {
 .progress {
 	position: relative;
 	display: inline-block;
-	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	overflow: hidden;
 	width: 50%;
 	min-width: 0;
 	margin: 0 auto;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
 }
 
 .progress:after {
@@ -5501,7 +5510,13 @@ Copyright (c) 2012 Dan Eden*/
 	clear: both;
 }
 
-.rock-modal .modal-footer .btn {
+.rock-modal .modal-footer .btn,
+.rock-modal .modal-footer .fileupload-dropzone input,
+.fileupload-dropzone .rock-modal .modal-footer input,
+.rock-modal .modal-footer .fileupload-dropzone .person-picker .picker-label,
+.fileupload-dropzone .person-picker .rock-modal .modal-footer .picker-label,
+.rock-modal .modal-footer .person-picker .fileupload-dropzone .picker-label,
+.person-picker .fileupload-dropzone .rock-modal .modal-footer .picker-label {
 	float: right;
 	margin-left: 5px;
 }
@@ -5597,6 +5612,61 @@ Copyright (c) 2012 Dan Eden*/
 .form-group .input-group i {
 	position: absolute;
 	right: 0;
+}
+
+.fileupload-dropzone {
+	margin-top: 6.66667px;
+}
+
+.fileupload-dropzone span {
+	display: none;
+}
+
+.fileupload-dropzone input,
+.fileupload-dropzone .person-picker .picker-label,
+.person-picker .fileupload-dropzone .picker-label {
+	color: transparent;
+	font-size: 0;
+	max-width: 240px;
+}
+
+.fileupload-dropzone input:after,
+.fileupload-dropzone .person-picker .picker-label:after,
+.person-picker .fileupload-dropzone .picker-label:after {
+	content: "Choose\00a0 File";
+	display: block;
+	color: #6bac43;
+	font-size: 18px;
+	text-align: center;
+	line-height: 1em;
+	padding: 5px 10px;
+}
+
+.fileupload-dropzone input:hover,
+.fileupload-dropzone .person-picker .picker-label:hover,
+.person-picker .fileupload-dropzone .picker-label:hover {
+	color: transparent;
+}
+
+.fileupload-dropzone input:hover:after,
+.fileupload-dropzone .person-picker .picker-label:hover:after,
+.person-picker .fileupload-dropzone .picker-label:hover:after {
+	color: #ffffff;
+}
+
+.fileupload-group .fileupload-thumbnail .file-link {
+	margin: 10px 5px;
+}
+
+.fileupload-group .fileupload-thumbnail a {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.fileupload-group .fileupload-thumbnail .fileupload-remove {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 6.66667px;
 }
 
 .rock-drop-down-list,
@@ -5796,7 +5866,12 @@ Copyright (c) 2012 Dan Eden*/
 	margin-top: 40px;
 }
 
-.person-picker .picker-actions .btn {
+.person-picker .picker-actions .btn,
+.person-picker .picker-actions .fileupload-dropzone input,
+.fileupload-dropzone .person-picker .picker-actions input,
+.fileupload-dropzone .person-picker .picker-actions .picker-label,
+.person-picker .picker-actions .fileupload-dropzone .picker-label,
+.person-picker .fileupload-dropzone .picker-actions .picker-label {
 	display: inline-block;
 	margin-bottom: 0;
 	padding: 10px 20px 10px 0;
@@ -5806,7 +5881,12 @@ Copyright (c) 2012 Dan Eden*/
 	font-weight: 500;
 }
 
-.person-picker .picker-actions .btn:after {
+.person-picker .picker-actions .btn:after,
+.person-picker .picker-actions .fileupload-dropzone input:after,
+.fileupload-dropzone .person-picker .picker-actions input:after,
+.fileupload-dropzone .person-picker .picker-actions .picker-label:after,
+.person-picker .picker-actions .fileupload-dropzone .picker-label:after,
+.person-picker .fileupload-dropzone .picker-actions .picker-label:after {
 	display: inline-block;
 	padding-left: 10px;
 	content: "\f054";
@@ -5815,16 +5895,31 @@ Copyright (c) 2012 Dan Eden*/
 	font-family: "FontAwesome";
 }
 
-.person-picker .picker-actions .btn:focus {
+.person-picker .picker-actions .btn:focus,
+.person-picker .picker-actions .fileupload-dropzone input:focus,
+.fileupload-dropzone .person-picker .picker-actions input:focus,
+.fileupload-dropzone .person-picker .picker-actions .picker-label:focus,
+.person-picker .picker-actions .fileupload-dropzone .picker-label:focus,
+.person-picker .fileupload-dropzone .picker-actions .picker-label:focus {
 	outline: 0;
 }
 
-.person-picker .picker-actions .btn:hover {
+.person-picker .picker-actions .btn:hover,
+.person-picker .picker-actions .fileupload-dropzone input:hover,
+.fileupload-dropzone .person-picker .picker-actions input:hover,
+.fileupload-dropzone .person-picker .picker-actions .picker-label:hover,
+.person-picker .picker-actions .fileupload-dropzone .picker-label:hover,
+.person-picker .fileupload-dropzone .picker-actions .picker-label:hover {
 	color: #548735;
 	background-color: transparent;
 }
 
-.person-picker .picker-actions .btn:hover:after {
+.person-picker .picker-actions .btn:hover:after,
+.person-picker .picker-actions .fileupload-dropzone input:hover:after,
+.fileupload-dropzone .person-picker .picker-actions input:hover:after,
+.fileupload-dropzone .person-picker .picker-actions .picker-label:hover:after,
+.person-picker .picker-actions .fileupload-dropzone .picker-label:hover:after,
+.person-picker .fileupload-dropzone .picker-actions .picker-label:hover:after {
 	color: #548735;
 }
 
@@ -6166,14 +6261,26 @@ textarea:focus {
 	display: inline-block;
 }
 
-#cms-admin-footer .button-bar .btn {
+#cms-admin-footer .button-bar .btn,
+#cms-admin-footer .button-bar .fileupload-dropzone input,
+.fileupload-dropzone #cms-admin-footer .button-bar input,
+#cms-admin-footer .button-bar .fileupload-dropzone .person-picker .picker-label,
+.fileupload-dropzone .person-picker #cms-admin-footer .button-bar .picker-label,
+#cms-admin-footer .button-bar .person-picker .fileupload-dropzone .picker-label,
+.person-picker .fileupload-dropzone #cms-admin-footer .button-bar .picker-label {
 	margin-bottom: 0;
 	padding: 10px;
 	color: #ffffff;
 	border: 0;
 }
 
-#cms-admin-footer .button-bar .btn:hover {
+#cms-admin-footer .button-bar .btn:hover,
+#cms-admin-footer .button-bar .fileupload-dropzone input:hover,
+.fileupload-dropzone #cms-admin-footer .button-bar input:hover,
+#cms-admin-footer .button-bar .fileupload-dropzone .person-picker .picker-label:hover,
+.fileupload-dropzone .person-picker #cms-admin-footer .button-bar .picker-label:hover,
+#cms-admin-footer .button-bar .person-picker .fileupload-dropzone .picker-label:hover,
+.person-picker .fileupload-dropzone #cms-admin-footer .button-bar .picker-label:hover {
 	background-color: transparent;
 }
 
@@ -6380,7 +6487,28 @@ textarea:focus {
 }
 
 ul {
-	list-style-position: inside;
+	list-style-position: outside;
+}
+
+li:not(last-child) {
+	margin-bottom: 10px;
+}
+
+ol {
+	font-family: "ff-meta-serif-web-pro";
+	line-height: 1.38889;
+	font-size: 1.125em;
+	letter-spacing: 0.15px;
+}
+
+li > ul {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+ol,
+ul {
+	margin-left: 20px;
 }
 
 #content-wrapper .actions {
@@ -6466,7 +6594,14 @@ ul {
 }
 
 input + .btn,
-.person-picker .picker-label + .btn {
+.person-picker .picker-label + .btn,
+.fileupload-dropzone input + input,
+.person-picker .fileupload-dropzone .picker-label + input,
+.fileupload-dropzone .person-picker .picker-label + input,
+.fileupload-dropzone .person-picker input + .picker-label,
+.fileupload-dropzone .person-picker .picker-label + .picker-label,
+.person-picker .fileupload-dropzone input + .picker-label,
+.person-picker .fileupload-dropzone .picker-label + .picker-label {
 	margin-top: 20px;
 }
 
@@ -6575,9 +6710,8 @@ input + .btn,
 }
 
 .sidenav a {
-	-webkit-flex-grow: 1;
-	    -ms-flex-positive: 1;
-	        flex-grow: 1;
+	-ms-flex-positive: 1;
+	    flex-grow: 1;
 	position: relative;
 	text-decoration: none;
 }
@@ -6748,11 +6882,23 @@ input + .btn,
 	padding-bottom: 10px;
 }
 
-.modal-content .modal-body .picker .btn {
+.modal-content .modal-body .picker .btn,
+.modal-content .modal-body .picker .fileupload-dropzone input,
+.fileupload-dropzone .modal-content .modal-body .picker input,
+.modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label,
+.fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label,
+.modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label,
+.person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label {
 	padding: 10px 20px;
 }
 
-.modal-content .modal-body .picker .btn:not(:last-child) {
+.modal-content .modal-body .picker .btn:not(:last-child),
+.modal-content .modal-body .picker .fileupload-dropzone input:not(:last-child),
+.fileupload-dropzone .modal-content .modal-body .picker input:not(:last-child),
+.modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label:not(:last-child),
+.fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label:not(:last-child),
+.modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label:not(:last-child),
+.person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label:not(:last-child) {
 	margin-right: 20px;
 }
 
@@ -6922,7 +7068,13 @@ input + .btn,
 	padding: 5px 30px 5px 0;
 }
 
-.modal-content .modal-body .panel-body .controls-row .btn {
+.modal-content .modal-body .panel-body .controls-row .btn,
+.modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input,
+.fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input,
+.modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label,
+.fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label,
+.modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label,
+.person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label {
 	padding: 0;
 	border: none;
 	display: inline-block;
@@ -6931,11 +7083,23 @@ input + .btn,
 	right: 10px;
 }
 
-.modal-content .modal-body .panel-body .controls-row .btn:hover {
+.modal-content .modal-body .panel-body .controls-row .btn:hover,
+.modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input:hover,
+.fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input:hover,
+.modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label:hover,
+.fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label:hover,
+.modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label:hover,
+.person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label:hover {
 	background-color: transparent;
 }
 
-.modal-content .modal-body .panel-body .controls-row .btn:hover i {
+.modal-content .modal-body .panel-body .controls-row .btn:hover i,
+.modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input:hover i,
+.fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input:hover i,
+.modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label:hover i,
+.fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label:hover i,
+.modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label:hover i,
+.person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label:hover i {
 	color: #6bac43;
 }
 
@@ -6978,11 +7142,23 @@ input + .btn,
 	text-align: center;
 }
 
-.registration-entry .btn {
+.registration-entry .btn,
+.registration-entry .fileupload-dropzone input,
+.fileupload-dropzone .registration-entry input,
+.registration-entry .fileupload-dropzone .person-picker .picker-label,
+.fileupload-dropzone .person-picker .registration-entry .picker-label,
+.registration-entry .person-picker .fileupload-dropzone .picker-label,
+.person-picker .fileupload-dropzone .registration-entry .picker-label {
 	font-weight: 500;
 }
 
-.registration-entry .btn:focus {
+.registration-entry .btn:focus,
+.registration-entry .fileupload-dropzone input:focus,
+.fileupload-dropzone .registration-entry input:focus,
+.registration-entry .fileupload-dropzone .person-picker .picker-label:focus,
+.fileupload-dropzone .person-picker .registration-entry .picker-label:focus,
+.registration-entry .person-picker .fileupload-dropzone .picker-label:focus,
+.person-picker .fileupload-dropzone .registration-entry .picker-label:focus {
 	border-width: 3px;
 }
 
@@ -9017,8 +9193,7 @@ td {
 
 .newspring-wordmark {
 	-webkit-transform: rotate(270deg);
-	-ms-transform: rotate(270deg);
-	    transform: rotate(270deg);
+	transform: rotate(270deg);
 	position: fixed;
 	z-index: 10;
 	top: auto;
@@ -9028,7 +9203,6 @@ td {
 	overflow: visible;
 	width: 0;
 	-webkit-transform-origin: left bottom 0;
-	    -ms-transform-origin: left bottom 0;
 	        transform-origin: left bottom 0;
 	text-shadow: 0 0 10px #858585;
 	font-weight: 900;
@@ -14772,7 +14946,13 @@ section {
 	left: 42%;
 }
 
-.modal-content .modal-body .picker .btn:not(:last-child) {
+.modal-content .modal-body .picker .btn:not(:last-child),
+.modal-content .modal-body .picker .fileupload-dropzone input:not(:last-child),
+.fileupload-dropzone .modal-content .modal-body .picker input:not(:last-child),
+.modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label:not(:last-child),
+.fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label:not(:last-child),
+.modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label:not(:last-child),
+.person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label:not(:last-child) {
 	margin-right: 0;
 }
 
@@ -15455,13 +15635,11 @@ section {
 @-ms-keyframes spin {
 
 0% {
-	-ms-transform: rotate(0deg);
-	    transform: rotate(0deg);
+	transform: rotate(0deg);
 }
 
 100% {
-	-ms-transform: rotate(360deg);
-	    transform: rotate(360deg);
+	transform: rotate(360deg);
 }
 
 }

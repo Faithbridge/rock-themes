@@ -24,7 +24,28 @@
 }
 
 ul {
-  list-style-position: inside;
+  list-style-position: outside;
+}
+
+li:not(last-child) {
+  margin-bottom: $base-spacing-unit / 2;
+}
+
+ol {
+  font-family: "ff-meta-serif-web-pro";
+  line-height: $line-height-ratio * 1.25;
+  font-size: $base-font-size/16px * 1em;
+  letter-spacing: 0.15px;
+}
+
+li > ul {
+  margin-top: $base-spacing-unit;
+  margin-left: $base-spacing-unit;
+}
+
+ol,
+ul {
+  margin-left: $base-spacing-unit;
 }
 
 #content-wrapper {

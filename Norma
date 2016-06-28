@@ -19,7 +19,6 @@
   # Fuse Tasks
   
   "sass":
-    "endpoint": "NewSpring/norma-sass#feature-windows"
     "src": "./.themes/Fuse/Styles/**/*"
     "dest": "./compiled/Fuse/Styles"
     
@@ -149,3 +148,8 @@
     "@extend": "copy"
     "src": "./compiled/Junction/**/*"
     "dest": "../Rock/RockWeb/Themes/Junction"
+
+  "browser-sync":
+    "dev": true
+    "xip": true
+    "files": ["./compiled/**/*"]

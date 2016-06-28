@@ -15,6 +15,61 @@
   }
 }
 
+.fileupload-dropzone {
+  margin-top: $base-spacing-unit / 3;
+
+  span {
+    display: none;  
+  }
+
+  input {
+    @extend .btn;
+    // text-indent: -9999px;
+    color: transparent;
+    font-size: 0;
+    max-width: 240px;
+
+    &:after {
+      content: "Choose\00a0 File";
+      display: block;
+      color: $brand-color;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1em;
+      padding: $base-spacing-unit / 4 $base-spacing-unit / 2;
+    }
+
+    &:hover {
+      color: transparent;
+
+      &:after {
+        color: $light-color;
+      }
+    }
+  }
+}
+
+.fileupload-group {
+
+  .fileupload-thumbnail {
+    
+    .file-link {
+       margin: $base-spacing-unit / 2 $base-spacing-unit / 4;
+    }
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .fileupload-remove {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: $base-spacing-unit / 3;
+    }
+  }
+}
+
 .rock-drop-down-list,
 .campus-picker,
  {
