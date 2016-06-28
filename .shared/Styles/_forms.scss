@@ -15,6 +15,32 @@
   }
 }
 
+.fileupload-dropzone {
+  margin-top: $base-spacing-unit / 3;
+
+  span {
+    display: none;  
+  }
+}
+
+.fileupload-group {
+
+  .fileupload-thumbnail {
+    margin: $base-spacing-unit $base-spacing-unit / 5;
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .fileupload-remove {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: $base-spacing-unit / 3;
+    }
+  }
+}
+
 .rock-drop-down-list,
 .campus-picker,
  {

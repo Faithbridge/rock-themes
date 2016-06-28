@@ -100,35 +100,30 @@
 .fa-rotate-90 {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 	-webkit-transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 	-webkit-transform: rotate(270deg);
-	-ms-transform: rotate(270deg);
 	transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
 	-webkit-transform: scale(-1, 1);
-	-ms-transform: scale(-1, 1);
 	transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
 	-webkit-transform: scale(1, -1);
-	-ms-transform: scale(1, -1);
 	transform: scale(1, -1);
 }
 
@@ -3955,7 +3950,6 @@ html.modal--opened .scrollable {
 	visibility: visible;
 	margin-bottom: 0;
 	-webkit-transform: translateY(-20px);
-	    -ms-transform: translateY(-20px);
 	        transform: translateY(-20px);
 	left: 5px;
 	font-family: "colfax-web";
@@ -4048,16 +4042,14 @@ html.modal--opened .scrollable {
 .progress {
 	position: relative;
 	display: inline-block;
-	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	overflow: hidden;
 	width: 50%;
 	min-width: 0;
 	margin: 0 auto;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
 }
 
 .progress:after {
@@ -5599,6 +5591,29 @@ Copyright (c) 2012 Dan Eden*/
 	right: 0;
 }
 
+.fileupload-dropzone {
+	margin-top: 6.66667px;
+}
+
+.fileupload-dropzone span {
+	display: none;
+}
+
+.fileupload-group .fileupload-thumbnail {
+	margin: 20px 4px;
+}
+
+.fileupload-group .fileupload-thumbnail a {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.fileupload-group .fileupload-thumbnail .fileupload-remove {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 6.66667px;
+}
+
 .rock-drop-down-list,
 .campus-picker {
 	position: relative;
@@ -6380,7 +6395,27 @@ textarea:focus {
 }
 
 ul {
-	list-style-position: inside;
+	list-style-position: outside;
+}
+
+li:not(last-child) {
+	margin-bottom: 10px;
+}
+
+ol {
+	font-family: "ff-meta-serif-web-pro";
+	line-height: 1.38889;
+	font-size: 1.125em;
+	letter-spacing: 0.15px;
+}
+
+li > ul {
+	margin-left: 20px;
+}
+
+ol,
+ul {
+	margin-left: 20px;
 }
 
 #content-wrapper .actions {
@@ -6575,9 +6610,8 @@ input + .btn,
 }
 
 .sidenav a {
-	-webkit-flex-grow: 1;
-	    -ms-flex-positive: 1;
-	        flex-grow: 1;
+	-ms-flex-positive: 1;
+	    flex-grow: 1;
 	position: relative;
 	text-decoration: none;
 }
@@ -9017,8 +9051,7 @@ td {
 
 .newspring-wordmark {
 	-webkit-transform: rotate(270deg);
-	-ms-transform: rotate(270deg);
-	    transform: rotate(270deg);
+	transform: rotate(270deg);
 	position: fixed;
 	z-index: 10;
 	top: auto;
@@ -9028,7 +9061,6 @@ td {
 	overflow: visible;
 	width: 0;
 	-webkit-transform-origin: left bottom 0;
-	    -ms-transform-origin: left bottom 0;
 	        transform-origin: left bottom 0;
 	text-shadow: 0 0 10px #858585;
 	font-weight: 900;
@@ -15455,13 +15487,11 @@ section {
 @-ms-keyframes spin {
 
 0% {
-	-ms-transform: rotate(0deg);
-	    transform: rotate(0deg);
+	transform: rotate(0deg);
 }
 
 100% {
-	-ms-transform: rotate(360deg);
-	    transform: rotate(360deg);
+	transform: rotate(360deg);
 }
 
 }
