@@ -2,7 +2,8 @@
 
 <asp:Content ID="ctMain" ContentPlaceHolderID="main" runat="server">
 
-    <div class="container body-content">
-        <rock:zone name="Main" runat="server" />
-    </div>
+<div class="container body-content">
+	<Rock:Zone Name="Main" runat="server" />
+</div>
+
 </asp:Content>

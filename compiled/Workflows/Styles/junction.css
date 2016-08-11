@@ -1794,8 +1794,8 @@ h4,
   line-height: 1.22222;
   margin-bottom: 10px; }
 
-.btn, .btn--small, .btn--disabled,
-.btn:disabled, .btn--corners, .btn--light, .modal-content .modal-footer a, .btn--filled, .btn--dark-tertiary, .btn--alert, .btn--icon, .btn--facebook, .btn--google, .btn--twitter,
+.btn, .fileupload-dropzone input, .fileupload-dropzone .person-picker .picker-label, .person-picker .fileupload-dropzone .picker-label, .btn--small, .btn--disabled,
+.btn:disabled, .fileupload-dropzone input:disabled, .btn--corners, .btn--light, .modal-content .modal-footer a, .btn--filled, .btn--dark-tertiary, .btn--alert, .btn--icon, .btn--facebook, .btn--google, .btn--twitter,
 h5,
 .h5 {
   font-family: "colfax-web";
@@ -2078,8 +2078,8 @@ textarea {
 .background--alert {
   background-color: #c64f55; }
 
-.btn, .btn--small, .btn--disabled,
-.btn:disabled, .btn--corners, .btn--light, .modal-content .modal-footer a, .btn--filled, .btn--dark-tertiary, .btn--alert, .btn--icon, .btn--facebook, .btn--google, .btn--twitter {
+.btn, .fileupload-dropzone input, .fileupload-dropzone .person-picker .picker-label, .person-picker .fileupload-dropzone .picker-label, .btn--small, .btn--disabled,
+.btn:disabled, .fileupload-dropzone input:disabled, .btn--corners, .btn--light, .modal-content .modal-footer a, .btn--filled, .btn--dark-tertiary, .btn--alert, .btn--icon, .btn--facebook, .btn--google, .btn--twitter {
   border-radius: 1000px;
   position: relative;
   display: inline-block;
@@ -2091,7 +2091,7 @@ textarea {
   text-decoration: none;
   color: #6bac43;
   border: 3px solid #6bac43; }
-  .btn:hover, .btn--small:hover, .btn--disabled:hover, .btn--corners:hover, .btn--light:hover, .modal-content .modal-footer a:hover, .btn--filled:hover, .btn--dark-tertiary:hover, .btn--alert:hover, .btn--icon:hover, .btn--facebook:hover, .btn--google:hover, .btn--twitter:hover {
+  .btn:hover, .fileupload-dropzone input:hover, .fileupload-dropzone .person-picker .picker-label:hover, .person-picker .fileupload-dropzone .picker-label:hover, .btn--small:hover, .btn--disabled:hover, .btn--corners:hover, .btn--light:hover, .modal-content .modal-footer a:hover, .btn--filled:hover, .btn--dark-tertiary:hover, .btn--alert:hover, .btn--icon:hover, .btn--facebook:hover, .btn--google:hover, .btn--twitter:hover {
     color: #ffffff;
     background: #6bac43; }
 
@@ -2101,12 +2101,18 @@ textarea {
   font-size: 18.75px; }
 
 .btn--disabled,
-.btn:disabled {
+.btn:disabled,
+.fileupload-dropzone input:disabled,
+.fileupload-dropzone .person-picker .picker-label:disabled,
+.person-picker .fileupload-dropzone .picker-label:disabled {
   cursor: text;
   color: #dddddd;
   border-color: #dddddd; }
   .btn--disabled:hover,
-  .btn:disabled:hover {
+  .btn:disabled:hover,
+  .fileupload-dropzone input:disabled:hover,
+  .fileupload-dropzone .person-picker .picker-label:disabled:hover,
+  .person-picker .fileupload-dropzone .picker-label:disabled:hover {
     cursor: text;
     color: #dddddd;
     background-color: inherit; }
@@ -11616,7 +11622,7 @@ Copyright (c) 2012 Dan Eden*/
 .rock-modal .modal-footer:after {
   clear: both; }
 
-.rock-modal .modal-footer .btn {
+.rock-modal .modal-footer .btn, .rock-modal .modal-footer .fileupload-dropzone input, .fileupload-dropzone .rock-modal .modal-footer input, .rock-modal .modal-footer .fileupload-dropzone .person-picker .picker-label, .fileupload-dropzone .person-picker .rock-modal .modal-footer .picker-label, .rock-modal .modal-footer .person-picker .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone .rock-modal .modal-footer .picker-label {
   float: right;
   margin-left: 5px; }
 
@@ -11688,6 +11694,39 @@ Copyright (c) 2012 Dan Eden*/
     .form-group .input-group i {
       position: absolute;
       right: 0; }
+
+.fileupload-dropzone {
+  margin-top: 6.66667px; }
+  .fileupload-dropzone span {
+    display: none; }
+  .fileupload-dropzone input, .fileupload-dropzone .person-picker .picker-label, .person-picker .fileupload-dropzone .picker-label {
+    color: transparent;
+    font-size: 0;
+    max-width: 240px; }
+    .fileupload-dropzone input:after, .fileupload-dropzone .person-picker .picker-label:after, .person-picker .fileupload-dropzone .picker-label:after {
+      content: "Choose\00a0 File";
+      display: block;
+      color: #6bac43;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1em;
+      padding: 5px 10px; }
+    .fileupload-dropzone input:hover, .fileupload-dropzone .person-picker .picker-label:hover, .person-picker .fileupload-dropzone .picker-label:hover {
+      color: transparent; }
+      .fileupload-dropzone input:hover:after, .fileupload-dropzone .person-picker .picker-label:hover:after, .person-picker .fileupload-dropzone .picker-label:hover:after {
+        color: #ffffff; }
+
+.fileupload-group .fileupload-thumbnail .file-link {
+  margin: 10px 5px; }
+
+.fileupload-group .fileupload-thumbnail a {
+  display: inline-block;
+  vertical-align: middle; }
+
+.fileupload-group .fileupload-thumbnail .fileupload-remove {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6.66667px; }
 
 .rock-drop-down-list,
 .campus-picker {
@@ -11829,7 +11868,7 @@ Copyright (c) 2012 Dan Eden*/
 
 .person-picker .picker-actions {
   margin-top: 40px; }
-  .person-picker .picker-actions .btn {
+  .person-picker .picker-actions .btn, .person-picker .picker-actions .fileupload-dropzone input, .fileupload-dropzone .person-picker .picker-actions input, .fileupload-dropzone .person-picker .picker-actions .picker-label, .person-picker .picker-actions .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone .picker-actions .picker-label {
     display: inline-block;
     margin-bottom: 0;
     padding: 10px 20px 10px 0;
@@ -11837,19 +11876,19 @@ Copyright (c) 2012 Dan Eden*/
     border: 0;
     font-size: 18px;
     font-weight: 500; }
-    .person-picker .picker-actions .btn:after {
+    .person-picker .picker-actions .btn:after, .person-picker .picker-actions .fileupload-dropzone input:after, .fileupload-dropzone .person-picker .picker-actions input:after, .fileupload-dropzone .person-picker .picker-actions .picker-label:after, .person-picker .picker-actions .fileupload-dropzone .picker-label:after, .person-picker .fileupload-dropzone .picker-actions .picker-label:after {
       display: inline-block;
       padding-left: 10px;
       content: "\f054";
       vertical-align: middle;
       color: #6bac43;
       font-family: "FontAwesome"; }
-    .person-picker .picker-actions .btn:focus {
+    .person-picker .picker-actions .btn:focus, .person-picker .picker-actions .fileupload-dropzone input:focus, .fileupload-dropzone .person-picker .picker-actions input:focus, .fileupload-dropzone .person-picker .picker-actions .picker-label:focus, .person-picker .picker-actions .fileupload-dropzone .picker-label:focus, .person-picker .fileupload-dropzone .picker-actions .picker-label:focus {
       outline: 0; }
-    .person-picker .picker-actions .btn:hover {
+    .person-picker .picker-actions .btn:hover, .person-picker .picker-actions .fileupload-dropzone input:hover, .fileupload-dropzone .person-picker .picker-actions input:hover, .fileupload-dropzone .person-picker .picker-actions .picker-label:hover, .person-picker .picker-actions .fileupload-dropzone .picker-label:hover, .person-picker .fileupload-dropzone .picker-actions .picker-label:hover {
       color: #548735;
       background-color: transparent; }
-      .person-picker .picker-actions .btn:hover:after {
+      .person-picker .picker-actions .btn:hover:after, .person-picker .picker-actions .fileupload-dropzone input:hover:after, .fileupload-dropzone .person-picker .picker-actions input:hover:after, .fileupload-dropzone .person-picker .picker-actions .picker-label:hover:after, .person-picker .picker-actions .fileupload-dropzone .picker-label:hover:after, .person-picker .fileupload-dropzone .picker-actions .picker-label:hover:after {
         color: #548735; }
 
 .form-group.address-control > label {
@@ -12089,12 +12128,12 @@ textarea {
     color: #ffffff; }
   #cms-admin-footer .button-bar {
     display: inline-block; }
-    #cms-admin-footer .button-bar .btn {
+    #cms-admin-footer .button-bar .btn, #cms-admin-footer .button-bar .fileupload-dropzone input, .fileupload-dropzone #cms-admin-footer .button-bar input, #cms-admin-footer .button-bar .fileupload-dropzone .person-picker .picker-label, .fileupload-dropzone .person-picker #cms-admin-footer .button-bar .picker-label, #cms-admin-footer .button-bar .person-picker .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone #cms-admin-footer .button-bar .picker-label {
       margin-bottom: 0;
       padding: 10px;
       color: #ffffff;
       border: 0; }
-    #cms-admin-footer .button-bar .btn:hover {
+    #cms-admin-footer .button-bar .btn:hover, #cms-admin-footer .button-bar .fileupload-dropzone input:hover, .fileupload-dropzone #cms-admin-footer .button-bar input:hover, #cms-admin-footer .button-bar .fileupload-dropzone .person-picker .picker-label:hover, .fileupload-dropzone .person-picker #cms-admin-footer .button-bar .picker-label:hover, #cms-admin-footer .button-bar .person-picker .fileupload-dropzone .picker-label:hover, .person-picker .fileupload-dropzone #cms-admin-footer .button-bar .picker-label:hover {
       background-color: transparent; }
 
 .panel {
@@ -12439,12 +12478,12 @@ textarea {
     margin-bottom: 20px; }
   .modal-content .modal-body .picker li:not(:last-child) {
     padding-bottom: 10px; }
-  .modal-content .modal-body .picker .btn {
+  .modal-content .modal-body .picker .btn, .modal-content .modal-body .picker .fileupload-dropzone input, .fileupload-dropzone .modal-content .modal-body .picker input, .modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label, .fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label, .modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label {
     padding: 10px 20px; }
-    .modal-content .modal-body .picker .btn:not(:last-child) {
+    .modal-content .modal-body .picker .btn:not(:last-child), .modal-content .modal-body .picker .fileupload-dropzone input:not(:last-child), .fileupload-dropzone .modal-content .modal-body .picker input:not(:last-child), .modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label:not(:last-child), .fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label:not(:last-child), .modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label:not(:last-child), .person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label:not(:last-child) {
       margin-right: 20px; }
       @media screen and (max-width: 768px) {
-        .modal-content .modal-body .picker .btn:not(:last-child) {
+        .modal-content .modal-body .picker .btn:not(:last-child), .modal-content .modal-body .picker .fileupload-dropzone input:not(:last-child), .fileupload-dropzone .modal-content .modal-body .picker input:not(:last-child), .modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label:not(:last-child), .fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label:not(:last-child), .modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label:not(:last-child), .person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label:not(:last-child) {
           margin-right: 0; } }
   .modal-content .modal-body .panel {
     padding: 0; }
@@ -12551,16 +12590,16 @@ textarea {
         font-size: 1.4em;
         line-height: 1.22222;
         padding: 5px 30px 5px 0; }
-      .modal-content .modal-body .panel-body .controls-row .btn {
+      .modal-content .modal-body .panel-body .controls-row .btn, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input, .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label, .fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label, .modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label {
         padding: 0;
         border: none;
         display: inline-block;
         position: absolute;
         top: 10px;
         right: 10px; }
-        .modal-content .modal-body .panel-body .controls-row .btn:hover {
+        .modal-content .modal-body .panel-body .controls-row .btn:hover, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input:hover, .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input:hover, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label:hover, .fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label:hover, .modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label:hover, .person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label:hover {
           background-color: transparent; }
-          .modal-content .modal-body .panel-body .controls-row .btn:hover i {
+          .modal-content .modal-body .panel-body .controls-row .btn:hover i, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input:hover i, .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input:hover i, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label:hover i, .fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label:hover i, .modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label:hover i, .person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label:hover i {
             color: #6bac43; }
 
 .modal-content .modal-footer {
