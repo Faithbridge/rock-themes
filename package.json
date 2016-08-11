@@ -13,7 +13,7 @@
     "norma-browser-sync": "^0.4.4",
     "norma-copy": "^0.4.6",
     "norma-less": "NewSpring/norma-less",
-    "norma-sass": "git://github.com/newspring/norma-sass.git#feature-windows"
+    "norma-sass": "^0.4.17"
   },
   "devDependencies": {
     "norma-livereload": "newspring/norma-livereload"
