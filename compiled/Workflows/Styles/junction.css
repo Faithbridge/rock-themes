@@ -96,31 +96,26 @@
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
   transform: scale(1, -1); }
 
 .fa-stack {
@@ -1799,8 +1794,8 @@ h4,
   line-height: 1.22222;
   margin-bottom: 10px; }
 
-.btn, .btn--small, .btn--disabled,
-.btn:disabled, .btn--corners, .btn--light, .modal-content .modal-footer a, .btn--filled, .btn--dark-tertiary, .btn--alert, .btn--icon, .btn--facebook, .btn--google, .btn--twitter, .control-label,
+.btn, .fileupload-dropzone input, .fileupload-dropzone .person-picker .picker-label, .person-picker .fileupload-dropzone .picker-label, .btn--small, .btn--disabled,
+.btn:disabled, .fileupload-dropzone input:disabled, .btn--corners, .btn--light, .modal-content .modal-footer a, .btn--filled, .btn--dark-tertiary, .btn--alert, .btn--icon, .btn--facebook, .btn--google, .btn--twitter,
 h5,
 .h5 {
   font-family: "colfax-web";
@@ -2026,24 +2021,31 @@ textarea {
     border-bottom-color: #505050; }
 
 .background, .background--fill,
-.background--cover, .background--right, .background--left, .background--fixed, .background--primary, .background--secondary, .background--tertiary, .background--dark-primary, .background--dark-secondary, .background--dark-tertiary, .background--light-primary, .background--light-secondary, .background--light-tertiary, .background--alert {
+.background--cover, .background--right, .background--left, .background--bottom, .background--top, .background--fixed, .background--primary, .background--secondary, .background--tertiary, .background--dark-primary, .background--dark-secondary, .background--dark-tertiary, .background--light-primary, .background--light-secondary, .background--light-tertiary, .background--alert {
   overflow: hidden;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  background-size: 100%; }
 
 .background--fill,
 .background--cover {
   background-size: cover; }
 
 .background--right {
-  background-position: center right; }
+  background-position-x: right; }
 
 .background--left {
-  background-position: center left; }
+  background-position-x: left; }
+
+.background--bottom {
+  background-position-y: bottom; }
+
+.background--top {
+  background-position-y: top; }
 
 .background--fixed {
   background-attachment: fixed;
-  background-position: top;
+  background-position-y: top;
   background-size: 100%; }
 
 .background--primary {
@@ -2076,8 +2078,8 @@ textarea {
 .background--alert {
   background-color: #c64f55; }
 
-.btn, .btn--small, .btn--disabled,
-.btn:disabled, .btn--corners, .btn--light, .modal-content .modal-footer a, .btn--filled, .btn--dark-tertiary, .btn--alert, .btn--icon, .btn--facebook, .btn--google, .btn--twitter {
+.btn, .fileupload-dropzone input, .fileupload-dropzone .person-picker .picker-label, .person-picker .fileupload-dropzone .picker-label, .btn--small, .btn--disabled,
+.btn:disabled, .fileupload-dropzone input:disabled, .btn--corners, .btn--light, .modal-content .modal-footer a, .btn--filled, .btn--dark-tertiary, .btn--alert, .btn--icon, .btn--facebook, .btn--google, .btn--twitter {
   border-radius: 1000px;
   position: relative;
   display: inline-block;
@@ -2089,7 +2091,7 @@ textarea {
   text-decoration: none;
   color: #6bac43;
   border: 3px solid #6bac43; }
-  .btn:hover, .btn--small:hover, .btn--disabled:hover, .btn--corners:hover, .btn--light:hover, .modal-content .modal-footer a:hover, .btn--filled:hover, .btn--dark-tertiary:hover, .btn--alert:hover, .btn--icon:hover, .btn--facebook:hover, .btn--google:hover, .btn--twitter:hover {
+  .btn:hover, .fileupload-dropzone input:hover, .fileupload-dropzone .person-picker .picker-label:hover, .person-picker .fileupload-dropzone .picker-label:hover, .btn--small:hover, .btn--disabled:hover, .btn--corners:hover, .btn--light:hover, .modal-content .modal-footer a:hover, .btn--filled:hover, .btn--dark-tertiary:hover, .btn--alert:hover, .btn--icon:hover, .btn--facebook:hover, .btn--google:hover, .btn--twitter:hover {
     color: #ffffff;
     background: #6bac43; }
 
@@ -2099,12 +2101,18 @@ textarea {
   font-size: 18.75px; }
 
 .btn--disabled,
-.btn:disabled {
+.btn:disabled,
+.fileupload-dropzone input:disabled,
+.fileupload-dropzone .person-picker .picker-label:disabled,
+.person-picker .fileupload-dropzone .picker-label:disabled {
   cursor: text;
   color: #dddddd;
   border-color: #dddddd; }
   .btn--disabled:hover,
-  .btn:disabled:hover {
+  .btn:disabled:hover,
+  .fileupload-dropzone input:disabled:hover,
+  .fileupload-dropzone .person-picker .picker-label:disabled:hover,
+  .person-picker .fileupload-dropzone .picker-label:disabled:hover {
     cursor: text;
     color: #dddddd;
     background-color: inherit; }
@@ -2138,6 +2146,9 @@ textarea {
   color: #c64f55;
   border-color: #c64f55;
   background-color: #ffffff; }
+  .btn--alert:hover {
+    color: #ffffff;
+    background-color: #c64f55; }
 
 .btn--icon, .btn--facebook, .btn--google, .btn--twitter {
   padding-right: 78px; }
@@ -2201,11 +2212,9 @@ textarea {
 
 @-ms-keyframes spin {
   0% {
-    -ms-transform: rotate(0deg);
-        transform: rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
-    -ms-transform: rotate(360deg);
-        transform: rotate(360deg); } }
+    transform: rotate(360deg); } }
 
 @keyframes spin {
   0% {
@@ -2367,7 +2376,7 @@ html.modal--opened {
   visibility: visible;
   cursor: pointer; }
 
-.grid, .row {
+.grid, .row, .grid--rev {
   margin-bottom: 0;
   margin-left: -20px;
   list-style: none; }
@@ -2381,6 +2390,14 @@ html.modal--opened {
 
 .grid > .grid, .row > .grid, .grid > .row, .row > .row {
   margin-left: 0; }
+
+.grid--rev {
+  direction: rtl;
+  text-align: right; }
+
+.grid--rev > .grid__item, .grid--rev > .col-xs-1, .grid--rev > .col-xs-2, .grid--rev > .col-xs-3, .grid--rev > .col-xs-4, .grid--rev > .col-xs-5, .grid--rev > .col-xs-6, .grid--rev > .col-xs-7, .grid--rev > .col-xs-8, .grid--rev > .col-xs-9, .grid--rev > .col-xs-10, .grid--rev > .col-xs-11, .grid--rev > .col-xs-12, .grid--rev > .col-sm-1, .grid--rev > .col-sm-2, .grid--rev > .col-sm-3, .grid--rev > .col-sm-4, .grid--rev > .col-sm-5, .grid--rev > .col-sm-6, .grid--rev > .col-sm-7, .grid--rev > .col-sm-8, .grid--rev > .col-sm-9, .grid--rev > .col-sm-10, .grid--rev > .col-sm-11, .grid--rev > .col-sm-12, .grid--rev > .col-md-1, .grid--rev > .col-md-2, .grid--rev > .col-md-3, .grid--rev > .col-md-4, .grid--rev > .col-md-5, .grid--rev > .col-md-6, .grid--rev > .col-md-7, .grid--rev > .col-md-8, .grid--rev > .col-md-9, .grid--rev > .col-md-10, .grid--rev > .col-md-11, .grid--rev > .col-md-12, .grid--rev > .col-lg-1, .grid--rev > .col-lg-2, .grid--rev > .col-lg-3, .grid--rev > .col-lg-4, .grid--rev > .col-lg-5, .grid--rev > .col-lg-6, .grid--rev > .col-lg-7, .grid--rev > .col-lg-8, .grid--rev > .col-lg-9, .grid--rev > .col-lg-10, .grid--rev > .col-lg-11, .grid--rev > .col-lg-12 {
+  direction: ltr;
+  text-align: left; }
 
 .grid__item--push-bottom {
   margin-bottom: 20px; }
@@ -2638,10 +2655,10 @@ html.modal--opened {
 .floating--bottom .floating__item {
   vertical-align: bottom; }
 
-.locked {
+.locked-scroll {
   overflow: hidden; }
 
-.locked__item {
+.locked-scroll__item {
   overflow: hidden;
   height: 100%;
   min-height: 100%;
@@ -2749,7 +2766,8 @@ html.modal--opened {
   position: absolute;
   top: 40px;
   bottom: -20px;
-  left: 10px;
+  left: 5px;
+  font-weight: 400;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: .2s;
   text-align: left;
@@ -2759,10 +2777,11 @@ html.modal--opened {
   visibility: visible;
   margin-bottom: 0;
   -webkit-transform: translateY(-20px);
-      -ms-transform: translateY(-20px);
           transform: translateY(-20px);
+  left: 5px;
   font-family: "colfax-web";
-  font-size: .785em; }
+  font-size: .785em;
+  font-weight: 400; }
 
 .input--active select {
   color: #303030; }
@@ -2832,16 +2851,14 @@ html.modal--opened {
 .progress {
   position: relative;
   display: inline-block;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   width: 50%;
   min-width: 0;
   margin: 0 auto;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
   .progress:after {
     position: absolute;
     right: 0;
@@ -3138,7 +3155,7 @@ html.modal--opened {
 .outlined--none {
   border: 0; }
 
-.one-whole {
+.one-whole, .col-sm-12 {
   width: 100%; }
 
 @media screen and (max-width: 480px) {
@@ -3158,7 +3175,7 @@ html.modal--opened {
     width: 100%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-one-whole, .col-sm-12 {
+  .lap-one-whole {
     width: 100%; } }
 
 @media screen and (min-width: 769px) {
@@ -3193,7 +3210,7 @@ html.modal--opened {
   .anchored-one-whole, .col-lg-12 {
     width: 100%; } }
 
-.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+.one-half, .col-sm-6, .col-md-6, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
   width: 50%; }
 
 @media screen and (max-width: 480px) {
@@ -3213,7 +3230,7 @@ html.modal--opened {
     width: 50%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-one-half, .col-sm-6, .lap-two-quarters, .lap-three-sixths, .lap-four-eighths, .lap-five-tenths, .lap-six-twelfths {
+  .lap-one-half, .lap-two-quarters, .lap-three-sixths, .lap-four-eighths, .lap-five-tenths, .lap-six-twelfths {
     width: 50%; } }
 
 @media screen and (min-width: 769px) {
@@ -3221,7 +3238,7 @@ html.modal--opened {
     width: 50%; } }
 
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
-  .lap-wide-one-half, .col-md-6, .lap-wide-two-quarters, .lap-wide-three-sixths, .lap-wide-four-eighths, .lap-wide-five-tenths, .lap-wide-six-twelfths {
+  .lap-wide-one-half, .lap-wide-two-quarters, .lap-wide-three-sixths, .lap-wide-four-eighths, .lap-wide-five-tenths, .lap-wide-six-twelfths {
     width: 50%; } }
 
 @media screen and (min-width: 1025px) {
@@ -3248,7 +3265,7 @@ html.modal--opened {
   .anchored-one-half, .col-lg-6, .anchored-two-quarters, .anchored-three-sixths, .anchored-four-eighths, .anchored-five-tenths, .anchored-six-twelfths {
     width: 50%; } }
 
-.one-third, .two-sixths, .three-ninths, .four-twelfths {
+.one-third, .col-sm-4, .two-sixths, .three-ninths, .four-twelfths {
   width: 33.3333333%; }
 
 @media screen and (max-width: 480px) {
@@ -3268,7 +3285,7 @@ html.modal--opened {
     width: 33.3333333%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-one-third, .col-sm-3, .lap-two-sixths, .lap-three-ninths, .lap-four-twelfths {
+  .lap-one-third, .lap-two-sixths, .lap-three-ninths, .lap-four-twelfths {
     width: 33.3333333%; } }
 
 @media screen and (min-width: 769px) {
@@ -3303,7 +3320,7 @@ html.modal--opened {
   .anchored-one-third, .col-lg-3, .anchored-two-sixths, .anchored-three-ninths, .anchored-four-twelfths {
     width: 33.3333333%; } }
 
-.two-thirds, .four-sixths, .six-ninths, .eight-twelfths {
+.two-thirds, .col-sm-8, .four-sixths, .six-ninths, .eight-twelfths {
   width: 66.6666666%; }
 
 @media screen and (max-width: 480px) {
@@ -3323,7 +3340,7 @@ html.modal--opened {
     width: 66.6666666%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-two-thirds, .col-sm-8, .lap-four-sixths, .lap-six-ninths, .lap-eight-twelfths {
+  .lap-two-thirds, .lap-four-sixths, .lap-six-ninths, .lap-eight-twelfths {
     width: 66.6666666%; } }
 
 @media screen and (min-width: 769px) {
@@ -3358,7 +3375,7 @@ html.modal--opened {
   .anchored-two-thirds, .col-lg-8, .anchored-four-sixths, .anchored-six-ninths, .anchored-eight-twelfths {
     width: 66.6666666%; } }
 
-.one-quarter, .two-eighths, .three-twelfths {
+.one-quarter, .col-sm-3, .two-eighths, .three-twelfths {
   width: 25%; }
 
 @media screen and (max-width: 480px) {
@@ -3378,7 +3395,7 @@ html.modal--opened {
     width: 25%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-one-quarter, .col-sm-4, .lap-two-eighths, .lap-three-twelfths {
+  .lap-one-quarter, .lap-two-eighths, .lap-three-twelfths {
     width: 25%; } }
 
 @media screen and (min-width: 769px) {
@@ -3413,7 +3430,7 @@ html.modal--opened {
   .anchored-one-quarter, .col-lg-4, .anchored-two-eighths, .anchored-three-twelfths {
     width: 25%; } }
 
-.three-quarters, .six-eighths, .nine-twelfths {
+.three-quarters, .col-sm-9, .six-eighths, .nine-twelfths {
   width: 75%; }
 
 @media screen and (max-width: 480px) {
@@ -3433,7 +3450,7 @@ html.modal--opened {
     width: 75%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-three-quarters, .col-sm-9, .lap-six-eighths, .lap-nine-twelfths {
+  .lap-three-quarters, .lap-six-eighths, .lap-nine-twelfths {
     width: 75%; } }
 
 @media screen and (min-width: 769px) {
@@ -3688,7 +3705,7 @@ html.modal--opened {
   .anchored-four-fifths, .anchored-eight-tenths {
     width: 80%; } }
 
-.one-sixth, .two-twelfths {
+.one-sixth, .col-sm-2, .two-twelfths {
   width: 16.6666666%; }
 
 @media screen and (max-width: 480px) {
@@ -3708,7 +3725,7 @@ html.modal--opened {
     width: 16.6666666%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-one-sixth, .col-sm-2, .lap-two-twelfths {
+  .lap-one-sixth, .lap-two-twelfths {
     width: 16.6666666%; } }
 
 @media screen and (min-width: 769px) {
@@ -3743,7 +3760,7 @@ html.modal--opened {
   .anchored-one-sixth, .col-lg-2, .anchored-two-twelfths {
     width: 16.6666666%; } }
 
-.five-sixths, .ten-twelfths {
+.five-sixths, .col-sm-10, .ten-twelfths {
   width: 83.3333333%; }
 
 @media screen and (max-width: 480px) {
@@ -3763,7 +3780,7 @@ html.modal--opened {
     width: 83.3333333%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-five-sixths, .col-sm-10, .lap-ten-twelfths {
+  .lap-five-sixths, .lap-ten-twelfths {
     width: 83.3333333%; } }
 
 @media screen and (min-width: 769px) {
@@ -4623,7 +4640,7 @@ html.modal--opened {
   .anchored-one-twelfth {
     width: 8.3333333%; } }
 
-.five-twelfths {
+.five-twelfths, .col-sm-5 {
   width: 41.6666666%; }
 
 @media screen and (max-width: 480px) {
@@ -4643,7 +4660,7 @@ html.modal--opened {
     width: 41.6666666%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-five-twelfths, .col-sm-5 {
+  .lap-five-twelfths {
     width: 41.6666666%; } }
 
 @media screen and (min-width: 769px) {
@@ -4678,7 +4695,7 @@ html.modal--opened {
   .anchored-five-twelfths, .col-lg-5 {
     width: 41.6666666%; } }
 
-.seven-twelfths {
+.seven-twelfths, .col-sm-7 {
   width: 58.3333333%; }
 
 @media screen and (max-width: 480px) {
@@ -4698,7 +4715,7 @@ html.modal--opened {
     width: 58.3333333%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-seven-twelfths, .col-sm-7 {
+  .lap-seven-twelfths {
     width: 58.3333333%; } }
 
 @media screen and (min-width: 769px) {
@@ -4733,7 +4750,7 @@ html.modal--opened {
   .anchored-seven-twelfths, .col-lg-7 {
     width: 58.3333333%; } }
 
-.eleven-twelfths {
+.eleven-twelfths, .col-sm-11 {
   width: 91.6666666%; }
 
 @media screen and (max-width: 480px) {
@@ -4753,7 +4770,7 @@ html.modal--opened {
     width: 91.6666666%; } }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .lap-eleven-twelfths, .col-sm-11 {
+  .lap-eleven-twelfths {
     width: 91.6666666%; } }
 
 @media screen and (min-width: 769px) {
@@ -5029,34 +5046,1330 @@ html.modal--opened {
 .constrain-forms {
   max-width: 500px; }
 
-.locked, .locked-left, .locked-right, .locked-top, .locked-middle, .locked-center, .locked-bottom, .locked-ends, .locked-sides {
+.locked {
   position: absolute; }
 
+@media screen and (max-width: 480px) {
+  .palm-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked {
+    position: absolute; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked {
+    position: absolute; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked {
+    position: absolute; } }
+
 .locked-left {
+  position: absolute;
   left: 0; }
 
+@media screen and (max-width: 480px) {
+  .palm-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked-left {
+    position: absolute;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked-left {
+    position: absolute;
+    left: 0; } }
+
 .locked-right {
+  position: absolute;
   right: 0; }
 
+@media screen and (max-width: 480px) {
+  .palm-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked-right {
+    position: absolute;
+    right: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked-right {
+    position: absolute;
+    right: 0; } }
+
 .locked-top {
+  position: absolute;
   top: 0; }
 
+@media screen and (max-width: 480px) {
+  .palm-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked-top {
+    position: absolute;
+    top: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked-top {
+    position: absolute;
+    top: 0; } }
+
 .locked-middle {
+  position: absolute;
   top: 50%; }
 
+@media screen and (max-width: 480px) {
+  .palm-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked-middle {
+    position: absolute;
+    top: 50%; } }
+
 .locked-center {
+  position: absolute;
   left: 50%; }
 
+@media screen and (max-width: 480px) {
+  .palm-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked-center {
+    position: absolute;
+    left: 50%; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked-center {
+    position: absolute;
+    left: 50%; } }
+
 .locked-bottom {
+  position: absolute;
   bottom: 0; }
 
+@media screen and (max-width: 480px) {
+  .palm-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked-bottom {
+    position: absolute;
+    bottom: 0; } }
+
 .locked-ends {
+  position: absolute;
   top: 0;
   bottom: 0; }
 
+@media screen and (max-width: 480px) {
+  .palm-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked-ends {
+    position: absolute;
+    top: 0;
+    bottom: 0; } }
+
 .locked-sides {
+  position: absolute;
   right: 0;
   left: 0; }
+
+@media screen and (max-width: 480px) {
+  .palm-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-locked-sides {
+    position: absolute;
+    right: 0;
+    left: 0; } }
+
+.fixed {
+  position: fixed; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed {
+    position: fixed; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed {
+    position: fixed; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed {
+    position: fixed; } }
+
+.fixed-left {
+  position: fixed;
+  left: 0; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed-left {
+    position: fixed;
+    left: 0; } }
+
+.fixed-right {
+  position: fixed;
+  right: 0; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed-right {
+    position: fixed;
+    right: 0; } }
+
+.fixed-top {
+  position: fixed;
+  top: 0; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed-top {
+    position: fixed;
+    top: 0; } }
+
+.fixed-middle {
+  position: fixed;
+  top: 50%; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed-middle {
+    position: fixed;
+    top: 50%; } }
+
+.fixed-center {
+  position: fixed;
+  left: 50%; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed-center {
+    position: fixed;
+    left: 50%; } }
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed-bottom {
+    position: fixed;
+    bottom: 0; } }
+
+.fixed-ends {
+  position: fixed;
+  top: 0;
+  bottom: 0; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed-ends {
+    position: fixed;
+    top: 0;
+    bottom: 0; } }
+
+.fixed-sides {
+  position: fixed;
+  right: 0;
+  left: 0; }
+
+@media screen and (max-width: 480px) {
+  .palm-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-fixed-sides {
+    position: fixed;
+    right: 0;
+    left: 0; } }
+
+.relative {
+  position: relative; }
+
+@media screen and (max-width: 480px) {
+  .palm-relative {
+    position: relative; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .palm-wide-relative {
+    position: relative; } }
+
+@media screen and (min-width: 481px) {
+  .palm-wide-and-up-relative {
+    position: relative; } }
+
+@media screen and (max-width: 768px) {
+  .handheld-relative {
+    position: relative; } }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .lap-relative {
+    position: relative; } }
+
+@media screen and (min-width: 769px) {
+  .lap-and-up-relative {
+    position: relative; } }
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .lap-wide-relative {
+    position: relative; } }
+
+@media screen and (min-width: 1025px) {
+  .lap-wide-and-up-relative {
+    position: relative; } }
+
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .portable-relative {
+    position: relative; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1680px) {
+  .desk-relative {
+    position: relative; } }
+
+@media screen and (min-width: 1281px) {
+  .desk-and-up-relative {
+    position: relative; } }
+
+@media screen and (min-width: 1681px) {
+  .desk-wide-relative {
+    position: relative; } }
+
+@media screen and (min-width: 1281px) {
+  .anchored-relative {
+    position: relative; } }
 
 .push {
   margin: 20px; }
@@ -10041,6 +11354,9 @@ hr {
 .grid > .table-responsive, .row > .table-responsive {
   margin-left: 20px; }
 
+div[class^="col-"] {
+  margin-left: -3px; }
+
 body.modal-open,
 .modal-open .navbar-fixed-top,
 .modal-open .navbar-fixed-bottom {
@@ -10306,7 +11622,7 @@ Copyright (c) 2012 Dan Eden*/
 .rock-modal .modal-footer:after {
   clear: both; }
 
-.rock-modal .modal-footer .btn {
+.rock-modal .modal-footer .btn, .rock-modal .modal-footer .fileupload-dropzone input, .fileupload-dropzone .rock-modal .modal-footer input, .rock-modal .modal-footer .fileupload-dropzone .person-picker .picker-label, .fileupload-dropzone .person-picker .rock-modal .modal-footer .picker-label, .rock-modal .modal-footer .person-picker .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone .rock-modal .modal-footer .picker-label {
   float: right;
   margin-left: 5px; }
 
@@ -10371,9 +11687,6 @@ Copyright (c) 2012 Dan Eden*/
       max-height: none;
       height: auto !important; }
 
-form {
-  height: 100vh; }
-
 .form-group {
   margin-bottom: 30px; }
   .form-group .input-group {
@@ -10381,6 +11694,39 @@ form {
     .form-group .input-group i {
       position: absolute;
       right: 0; }
+
+.fileupload-dropzone {
+  margin-top: 6.66667px; }
+  .fileupload-dropzone span {
+    display: none; }
+  .fileupload-dropzone input, .fileupload-dropzone .person-picker .picker-label, .person-picker .fileupload-dropzone .picker-label {
+    color: transparent;
+    font-size: 0;
+    max-width: 240px; }
+    .fileupload-dropzone input:after, .fileupload-dropzone .person-picker .picker-label:after, .person-picker .fileupload-dropzone .picker-label:after {
+      content: "Choose\00a0 File";
+      display: block;
+      color: #6bac43;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1em;
+      padding: 5px 10px; }
+    .fileupload-dropzone input:hover, .fileupload-dropzone .person-picker .picker-label:hover, .person-picker .fileupload-dropzone .picker-label:hover {
+      color: transparent; }
+      .fileupload-dropzone input:hover:after, .fileupload-dropzone .person-picker .picker-label:hover:after, .person-picker .fileupload-dropzone .picker-label:hover:after {
+        color: #ffffff; }
+
+.fileupload-group .fileupload-thumbnail .file-link {
+  margin: 10px 5px; }
+
+.fileupload-group .fileupload-thumbnail a {
+  display: inline-block;
+  vertical-align: middle; }
+
+.fileupload-group .fileupload-thumbnail .fileupload-remove {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6.66667px; }
 
 .rock-drop-down-list,
 .campus-picker {
@@ -10397,17 +11743,22 @@ form {
     content: "\f0d7";
     font-family: "FontAwesome"; }
 
+.radio,
 .checkbox-inline,
 .checkbox {
   display: block;
   width: 100%;
   margin: 10px 0;
   padding: 5px 0; }
+  .radio:after,
   .checkbox-inline:after,
   .checkbox:after {
     display: none;
     visibility: hidden; }
-  .checkbox-inline input, .checkbox-inline .person-picker .picker-label, .person-picker .checkbox-inline .picker-label,
+  .radio input, .radio .person-picker .picker-label, .person-picker .radio .picker-label,
+  .checkbox-inline input,
+  .checkbox-inline .person-picker .picker-label, .person-picker
+  .checkbox-inline .picker-label,
   .checkbox input,
   .checkbox .person-picker .picker-label, .person-picker
   .checkbox .picker-label {
@@ -10429,7 +11780,10 @@ form {
     border-radius: 50%;
     background-color: transparent;
     -webkit-appearance: none; }
-    .checkbox-inline input:before, .checkbox-inline .person-picker .picker-label:before, .person-picker .checkbox-inline .picker-label:before,
+    .radio input:before, .radio .person-picker .picker-label:before, .person-picker .radio .picker-label:before,
+    .checkbox-inline input:before,
+    .checkbox-inline .person-picker .picker-label:before, .person-picker
+    .checkbox-inline .picker-label:before,
     .checkbox input:before,
     .checkbox .person-picker .picker-label:before, .person-picker
     .checkbox .picker-label:before {
@@ -10442,12 +11796,18 @@ form {
       content: "";
       border: 2px solid #6bac43;
       border-radius: 50%; }
-    .checkbox-inline input:checked, .checkbox-inline .person-picker .picker-label:checked, .person-picker .checkbox-inline .picker-label:checked,
+    .radio input:checked, .radio .person-picker .picker-label:checked, .person-picker .radio .picker-label:checked,
+    .checkbox-inline input:checked,
+    .checkbox-inline .person-picker .picker-label:checked, .person-picker
+    .checkbox-inline .picker-label:checked,
     .checkbox input:checked,
     .checkbox .person-picker .picker-label:checked, .person-picker
     .checkbox .picker-label:checked {
       background-color: #6bac43; }
-      .checkbox-inline input:checked:before, .checkbox-inline .person-picker .picker-label:checked:before, .person-picker .checkbox-inline .picker-label:checked:before,
+      .radio input:checked:before, .radio .person-picker .picker-label:checked:before, .person-picker .radio .picker-label:checked:before,
+      .checkbox-inline input:checked:before,
+      .checkbox-inline .person-picker .picker-label:checked:before, .person-picker
+      .checkbox-inline .picker-label:checked:before,
       .checkbox input:checked:before,
       .checkbox .person-picker .picker-label:checked:before, .person-picker
       .checkbox .picker-label:checked:before {
@@ -10508,7 +11868,7 @@ form {
 
 .person-picker .picker-actions {
   margin-top: 40px; }
-  .person-picker .picker-actions .btn {
+  .person-picker .picker-actions .btn, .person-picker .picker-actions .fileupload-dropzone input, .fileupload-dropzone .person-picker .picker-actions input, .fileupload-dropzone .person-picker .picker-actions .picker-label, .person-picker .picker-actions .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone .picker-actions .picker-label {
     display: inline-block;
     margin-bottom: 0;
     padding: 10px 20px 10px 0;
@@ -10516,22 +11876,34 @@ form {
     border: 0;
     font-size: 18px;
     font-weight: 500; }
-    .person-picker .picker-actions .btn:after {
+    .person-picker .picker-actions .btn:after, .person-picker .picker-actions .fileupload-dropzone input:after, .fileupload-dropzone .person-picker .picker-actions input:after, .fileupload-dropzone .person-picker .picker-actions .picker-label:after, .person-picker .picker-actions .fileupload-dropzone .picker-label:after, .person-picker .fileupload-dropzone .picker-actions .picker-label:after {
       display: inline-block;
       padding-left: 10px;
       content: "\f054";
       vertical-align: middle;
       color: #6bac43;
       font-family: "FontAwesome"; }
-    .person-picker .picker-actions .btn:focus {
+    .person-picker .picker-actions .btn:focus, .person-picker .picker-actions .fileupload-dropzone input:focus, .fileupload-dropzone .person-picker .picker-actions input:focus, .fileupload-dropzone .person-picker .picker-actions .picker-label:focus, .person-picker .picker-actions .fileupload-dropzone .picker-label:focus, .person-picker .fileupload-dropzone .picker-actions .picker-label:focus {
       outline: 0; }
-    .person-picker .picker-actions .btn:hover {
+    .person-picker .picker-actions .btn:hover, .person-picker .picker-actions .fileupload-dropzone input:hover, .fileupload-dropzone .person-picker .picker-actions input:hover, .fileupload-dropzone .person-picker .picker-actions .picker-label:hover, .person-picker .picker-actions .fileupload-dropzone .picker-label:hover, .person-picker .fileupload-dropzone .picker-actions .picker-label:hover {
       color: #548735;
       background-color: transparent; }
-      .person-picker .picker-actions .btn:hover:after {
+      .person-picker .picker-actions .btn:hover:after, .person-picker .picker-actions .fileupload-dropzone input:hover:after, .fileupload-dropzone .person-picker .picker-actions input:hover:after, .fileupload-dropzone .person-picker .picker-actions .picker-label:hover:after, .person-picker .picker-actions .fileupload-dropzone .picker-label:hover:after, .person-picker .fileupload-dropzone .picker-actions .picker-label:hover:after {
         color: #548735; }
 
+.form-group.address-control > label {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-bottom: 1.5em; }
+
+.well > h4 {
+  margin-bottom: 1.5em; }
+
 .control-label {
+  font-weight: 500;
+  line-height: 1.125;
+  font-size: .875em;
+  padding-left: 5px;
   color: #505050; }
   .control-label small {
     color: #858585;
@@ -10554,7 +11926,6 @@ textarea {
 select {
   position: relative;
   z-index: 100;
-  background-image: url("/Themes/Workflows/assets/images/drop-down.png");
   background-repeat: no-repeat;
   background-position: 98% 50%;
   background-size: 13.5px; }
@@ -10757,12 +12128,12 @@ textarea {
     color: #ffffff; }
   #cms-admin-footer .button-bar {
     display: inline-block; }
-    #cms-admin-footer .button-bar .btn {
+    #cms-admin-footer .button-bar .btn, #cms-admin-footer .button-bar .fileupload-dropzone input, .fileupload-dropzone #cms-admin-footer .button-bar input, #cms-admin-footer .button-bar .fileupload-dropzone .person-picker .picker-label, .fileupload-dropzone .person-picker #cms-admin-footer .button-bar .picker-label, #cms-admin-footer .button-bar .person-picker .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone #cms-admin-footer .button-bar .picker-label {
       margin-bottom: 0;
       padding: 10px;
       color: #ffffff;
       border: 0; }
-    #cms-admin-footer .button-bar .btn:hover {
+    #cms-admin-footer .button-bar .btn:hover, #cms-admin-footer .button-bar .fileupload-dropzone input:hover, .fileupload-dropzone #cms-admin-footer .button-bar input:hover, #cms-admin-footer .button-bar .fileupload-dropzone .person-picker .picker-label:hover, .fileupload-dropzone .person-picker #cms-admin-footer .button-bar .picker-label:hover, #cms-admin-footer .button-bar .person-picker .fileupload-dropzone .picker-label:hover, .person-picker .fileupload-dropzone #cms-admin-footer .button-bar .picker-label:hover {
       background-color: transparent; }
 
 .panel {
@@ -10797,7 +12168,7 @@ textarea {
   margin: 0;
   position: absolute;
   top: 47%;
-  left: 47%;
+  left: 30%;
   background: #6bac43;
   z-index: 4;
   border-radius: 120px;
@@ -11107,12 +12478,12 @@ textarea {
     margin-bottom: 20px; }
   .modal-content .modal-body .picker li:not(:last-child) {
     padding-bottom: 10px; }
-  .modal-content .modal-body .picker .btn {
+  .modal-content .modal-body .picker .btn, .modal-content .modal-body .picker .fileupload-dropzone input, .fileupload-dropzone .modal-content .modal-body .picker input, .modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label, .fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label, .modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label {
     padding: 10px 20px; }
-    .modal-content .modal-body .picker .btn:not(:last-child) {
+    .modal-content .modal-body .picker .btn:not(:last-child), .modal-content .modal-body .picker .fileupload-dropzone input:not(:last-child), .fileupload-dropzone .modal-content .modal-body .picker input:not(:last-child), .modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label:not(:last-child), .fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label:not(:last-child), .modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label:not(:last-child), .person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label:not(:last-child) {
       margin-right: 20px; }
       @media screen and (max-width: 768px) {
-        .modal-content .modal-body .picker .btn:not(:last-child) {
+        .modal-content .modal-body .picker .btn:not(:last-child), .modal-content .modal-body .picker .fileupload-dropzone input:not(:last-child), .fileupload-dropzone .modal-content .modal-body .picker input:not(:last-child), .modal-content .modal-body .picker .fileupload-dropzone .person-picker .picker-label:not(:last-child), .fileupload-dropzone .person-picker .modal-content .modal-body .picker .picker-label:not(:last-child), .modal-content .modal-body .picker .person-picker .fileupload-dropzone .picker-label:not(:last-child), .person-picker .fileupload-dropzone .modal-content .modal-body .picker .picker-label:not(:last-child) {
           margin-right: 0; } }
   .modal-content .modal-body .panel {
     padding: 0; }
@@ -11219,16 +12590,16 @@ textarea {
         font-size: 1.4em;
         line-height: 1.22222;
         padding: 5px 30px 5px 0; }
-      .modal-content .modal-body .panel-body .controls-row .btn {
+      .modal-content .modal-body .panel-body .controls-row .btn, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input, .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label, .fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label, .modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label, .person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label {
         padding: 0;
         border: none;
         display: inline-block;
         position: absolute;
         top: 10px;
         right: 10px; }
-        .modal-content .modal-body .panel-body .controls-row .btn:hover {
+        .modal-content .modal-body .panel-body .controls-row .btn:hover, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input:hover, .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input:hover, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label:hover, .fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label:hover, .modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label:hover, .person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label:hover {
           background-color: transparent; }
-          .modal-content .modal-body .panel-body .controls-row .btn:hover i {
+          .modal-content .modal-body .panel-body .controls-row .btn:hover i, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone input:hover i, .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row input:hover i, .modal-content .modal-body .panel-body .controls-row .fileupload-dropzone .person-picker .picker-label:hover i, .fileupload-dropzone .person-picker .modal-content .modal-body .panel-body .controls-row .picker-label:hover i, .modal-content .modal-body .panel-body .controls-row .person-picker .fileupload-dropzone .picker-label:hover i, .person-picker .fileupload-dropzone .modal-content .modal-body .panel-body .controls-row .picker-label:hover i {
             color: #6bac43; }
 
 .modal-content .modal-footer {

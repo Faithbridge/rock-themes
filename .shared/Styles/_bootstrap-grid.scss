@@ -12,6 +12,10 @@
   margin-left: $base-spacing-unit;
 }
 
+div[class^="col-"] { 
+  margin-left: -3px;
+}
+
 // Extra small devices
 // Phones (<768px)
 .col-xs-1 {
@@ -78,62 +82,70 @@
 // Tablets (≥768px)
 .col-sm-1 {
   @extend .grid__item;
-  @extend .lap-one-twelfths;
+  @extend .one-twelfths;
 }
 
 .col-sm-2 {
   @extend .grid__item;
-  @extend .lap-one-sixth;
+  @extend .one-sixth;
 }
 
 .col-sm-3 {
   @extend .grid__item;
-  @extend .lap-one-third;
+  @extend .one-quarter;
+  
+  @include media-query(handheld) {
+    @extend .one-whole\@handheld;
+  }
 }
 
 .col-sm-4 {
   @extend .grid__item;
-  @extend .lap-one-quarter;
+  @extend .one-third;
 }
 
 .col-sm-5 {
   @extend .grid__item;
-  @extend .lap-five-twelfths;
+  @extend .five-twelfths;
 }
 
 .col-sm-6 {
   @extend .grid__item;
-  @extend .lap-one-half;
+  @extend .one-half;
+  
+  @include media-query(lap) {
+    @extend .one-whole\@lap;
+  }
 }
 
 .col-sm-7 {
   @extend .grid__item;
-  @extend .lap-seven-twelfths;
+  @extend .seven-twelfths;
 }
 
 .col-sm-8 {
   @extend .grid__item;
-  @extend .lap-two-thirds;
+  @extend .two-thirds;
 }
 
 .col-sm-9 {
   @extend .grid__item;
-  @extend .lap-three-quarters;
+  @extend .three-quarters;
 }
 
 .col-sm-10 {
   @extend .grid__item;
-  @extend .lap-five-sixths;
+  @extend .five-sixths;
 }
 
 .col-sm-11 {
   @extend .grid__item;
-  @extend .lap-eleven-twelfths;
+  @extend .eleven-twelfths;
 }
 
 .col-sm-12 {
   @extend .grid__item;
-  @extend .lap-one-whole;
+  @extend .one-whole;
 }
 
 // Medium devices
@@ -165,7 +177,11 @@
 
 .col-md-6 {
   @extend .grid__item;
-  @extend .lap-wide-one-half;
+  @extend .one-half;
+  
+  @include media-query(handheld) {
+    @extend .one-whole\@handheld;
+  }
 }
 
 .col-md-7 {

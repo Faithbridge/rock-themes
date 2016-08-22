@@ -1,6 +1,6 @@
-form {
-  height: 100vh;
-}
+// form {
+//   height: 100vh;
+// }
 
 .form-group {
   margin-bottom: $base-spacing-unit*1.5;
@@ -15,8 +15,64 @@ form {
   }
 }
 
+.fileupload-dropzone {
+  margin-top: $base-spacing-unit / 3;
+
+  span {
+    display: none;  
+  }
+
+  input {
+    @extend .btn;
+    // text-indent: -9999px;
+    color: transparent;
+    font-size: 0;
+    max-width: 240px;
+
+    &:after {
+      content: "Choose\00a0 File";
+      display: block;
+      color: $brand-color;
+      font-size: 18px;
+      text-align: center;
+      line-height: 1em;
+      padding: $base-spacing-unit / 4 $base-spacing-unit / 2;
+    }
+
+    &:hover {
+      color: transparent;
+
+      &:after {
+        color: $light-color;
+      }
+    }
+  }
+}
+
+.fileupload-group {
+
+  .fileupload-thumbnail {
+    
+    .file-link {
+       margin: $base-spacing-unit / 2 $base-spacing-unit / 4;
+    }
+
+    a {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .fileupload-remove {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: $base-spacing-unit / 3;
+    }
+  }
+}
+
 .rock-drop-down-list,
-.campus-picker {
+.campus-picker,
+ {
   position: relative;
 
   &:before,
@@ -37,7 +93,7 @@ form {
   }
 }
 
-
+.radio,
 .checkbox-inline,
 .checkbox {
   display: block;
@@ -247,9 +303,24 @@ form {
   }
 }
 
-.control-label {
-  @extend %h5;
+.form-group.address-control {
+  
+  & > label {
+    font-size: 1.25em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+  }
+}
 
+.well > h4 {
+  margin-bottom: 1.5em;
+}
+
+.control-label {
+  font-weight: 500;
+  line-height: 1.125;
+  font-size: .875em;
+  padding-left: 5px;
   color: map-get($colors , dark-secondary);
 
   small {
@@ -284,7 +355,7 @@ textarea {
 select {
   position: relative;
   z-index: 100;
-  background-image: url('/Themes/Workflows/assets/images/drop-down.png');
+  // background-image: url('/Themes/Workflows/assets/images/drop-down.png');
   background-repeat: no-repeat;
   background-position: 98% 50%;
   background-size: $base-font-size*.75;
