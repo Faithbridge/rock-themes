@@ -79,11 +79,12 @@
     "@extend": "less"
     "src": "./.themes/NewSpring/Styles/**/[^_]*"
     "dest": "./compiled/NewSpring/Styles"
+    "combine": true
   
-  "sass-NewSpring":
-    "@extend": "sass"
-    "src": "./.themes/NewSpring/Styles/**/*"
-    "dest": "./compiled/NewSpring/Styles"
+  # "sass-NewSpring":
+  #   "@extend": "sass"
+  #   "src": "./.themes/NewSpring/Styles/**/*"
+  #   "dest": "./compiled/NewSpring/Styles"
     
   "assets-NewSpring":
     "@extend": "copy"
