@@ -13,8 +13,8 @@
 
 @font-face {
 	font-family: 'FontAwesome';
-	src: url('../../Assets/Fonts/FontAwesome/fontawesome-webfont.eot?v=4.6.1');
-	src: url('../../Assets/Fonts/FontAwesome/fontawesome-webfont.eot?#iefix&v=4.6.1') format('embedded-opentype'), url('../../Assets/Fonts/FontAwesome/fontawesome-webfont.woff2?v=4.6.1') format('woff2'), url('../../Assets/Fonts/FontAwesome/fontawesome-webfont.woff?v=4.6.1') format('woff'), url('../../Assets/Fonts/FontAwesome/fontawesome-webfont.ttf?v=4.6.1') format('truetype'), url('../../Assets/Fonts/FontAwesome/fontawesome-webfont.svg?v=4.6.1#fontawesomeregular') format('svg');
+	src: url('//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts/fontawesome-webfont.eot?v=4.6.1');
+	src: url('//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts/fontawesome-webfont.eot?#iefix&v=4.6.1') format('embedded-opentype'), url('//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts/fontawesome-webfont.woff2?v=4.6.1') format('woff2'), url('//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts/fontawesome-webfont.woff?v=4.6.1') format('woff'), url('//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts/fontawesome-webfont.ttf?v=4.6.1') format('truetype'), url('//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts/fontawesome-webfont.svg?v=4.6.1#fontawesomeregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -12271,8 +12271,8 @@ table.attribute-grid tr th:nth-child(3) {
 }
 
 .personprofilebar-bio {
-	background-color: #303030;
-	border-bottom: 1px solid #161616;
+	background-color: #ffffff;
+	border-bottom: 1px solid #e6e6e6;
 	color: #ffffff;
 	position: relative;
 	padding-top: 50px;
@@ -12290,7 +12290,7 @@ table.attribute-grid tr th:nth-child(3) {
 	float: left;
 	width: 45px;
 	border-width: 0 0 1px 1px;
-	border-color: #161616;
+	border-color: #e6e6e6;
 	border-style: solid;
 	text-align: center;
 	color: #ffffff;
@@ -12741,11 +12741,11 @@ table.attribute-grid tr th:nth-child(3) {
 }
 
 .persondetails-group header {
-	background-color: #303030;
+	background-color: #ffffff;
 	margin: 0 -15px;
 	padding: 10px 15px;
 	position: relative;
-	border-bottom: 1px solid #161616;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .persondetails-group header:before,
@@ -12787,7 +12787,7 @@ table.attribute-grid tr th:nth-child(3) {
 	height: 100%;
 	display: block;
 	float: right;
-	border-left: 1px solid #161616;
+	border-left: 1px solid #e6e6e6;
 	text-align: center;
 	cursor: pointer;
 }
