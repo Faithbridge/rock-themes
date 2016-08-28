@@ -16128,3 +16128,8 @@ p.content--time {
 .nav-tabs > li.active > a:hover {
   background-color: #1c683e;
 }
+
+.navbar-static-top #zone-login .loginstatus > li > a .profile-photo {
+    background-size: cover;
+    background-position: center center;
+}
