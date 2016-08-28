@@ -2,14 +2,11 @@
 // -------------------------
 @import "../../../.remote/Styles/RockWeb/Bootstrap/variables";
 @import "../../../.remote/Styles/RockWeb/_rock-variables";
-@import "./variables/_index";
-
-// Set Font Awesome Path
-// -------------------------
-@fa-font-path: '../../../Assets/Fonts/FontAwesome';
+@import "variables/_index";
 
 // Load Master Styles
 // -------------------------
+@fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts"; // for referencing Bootstrap CDN font files directly
 @import "../../../.remote/Styles/RockWeb/FontAwesome/font-awesome";
 @import "../../../.remote/Styles/RockWeb/Bootstrap/bootstrap";
 @import "../../../.remote/Styles/RockWeb/_rock-core";
@@ -21,7 +18,7 @@
 
 // Load Override Styles
 // -------------------------
-@import "./overrides/_index";
+@import "overrides/_index";
 
 // Load Print Styles
 // -------------------------
