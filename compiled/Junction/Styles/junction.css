@@ -5862,6 +5862,58 @@ Copyright (c) 2012 Dan Eden*/
 	border-color: #6bac43;
 }
 
+.person-picker .picker-select-item-details {
+	margin: 20px 10px 20px 0;
+}
+
+.person-picker .picker-select-item-details .contents {
+	font-family: "colfax-web", sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+.person-picker .picker-select-item-details .contents h5,
+.person-picker .picker-select-item-details .contents .fee-table .fee-header strong,
+.fee-table .fee-header .person-picker .picker-select-item-details .contents strong {
+	margin-bottom: 5px;
+}
+
+.person-picker .picker-select-item-details .contents p,
+.person-picker .picker-select-item-details .contents .control-label small,
+.control-label .person-picker .picker-select-item-details .contents small,
+.person-picker .picker-select-item-details .contents .fee-table .fee-caption,
+.fee-table .person-picker .picker-select-item-details .contents .fee-caption,
+.person-picker .picker-select-item-details .contents
+    .fee-table .fee-value,
+.fee-table .person-picker .picker-select-item-details .contents .fee-value,
+.person-picker .picker-select-item-details .contents em,
+.person-picker .picker-select-item-details .contents strong {
+	font-family: "colfax-web", sans-serif;
+	font-size: inherit;
+}
+
+.person-picker .picker-select-item-details .contents p,
+.person-picker .picker-select-item-details .contents .control-label small,
+.control-label .person-picker .picker-select-item-details .contents small,
+.person-picker .picker-select-item-details .contents .fee-table .fee-caption,
+.fee-table .person-picker .picker-select-item-details .contents .fee-caption,
+.person-picker .picker-select-item-details .contents
+    .fee-table .fee-value,
+.fee-table .person-picker .picker-select-item-details .contents .fee-value {
+	margin-top: 5px;
+}
+
+.person-picker .picker-select-item-details .contents small {
+	font-weight: 500;
+	margin-left: 5px;
+}
+
+.person-picker .picker-select-item-details .contents em {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0;
+}
+
 .person-picker .picker-actions {
 	margin-top: 40px;
 }
@@ -6035,8 +6087,8 @@ select:focus {
 
 .person-picker .picker-select-none {
 	position: absolute;
-	top: 38px;
-	right: 0;
+	top: 20px;
+	right: 5px;
 	display: block;
 	opacity: 1;
 }
