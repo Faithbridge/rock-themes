@@ -6530,6 +6530,50 @@ ul {
 	border-bottom-width: 2px;
 }
 
+input::-webkit-input-placeholder,
+.person-picker .picker-label::-webkit-input-placeholder,
+select::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+input:focus::-webkit-input-placeholder,
+.person-picker .picker-label:focus::-webkit-input-placeholder,
+select:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #858585;
+}
+
+input::-moz-placeholder,
+.person-picker .picker-label::-moz-placeholder,
+select::-moz-placeholder,
+textarea::-moz-placeholder,
+input:focus::-moz-placeholder,
+.person-picker .picker-label:focus::-moz-placeholder,
+select:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { /* Firefox 19+ */
+	color: #858585;
+}
+
+input:-ms-input-placeholder,
+.person-picker .picker-label:-ms-input-placeholder,
+select:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+input:focus:-ms-input-placeholder,
+.person-picker .picker-label:focus:-ms-input-placeholder,
+select:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { /* IE 10+ */
+	color: #858585;
+}
+
+input:-moz-placeholder,
+.person-picker .picker-label:-moz-placeholder,
+select:-moz-placeholder,
+textarea:-moz-placeholder,
+input:focus:-moz-placeholder,
+.person-picker .picker-label:focus:-moz-placeholder,
+select:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { /* Firefox 18- */
+	color: #858585;
+}
+
 .alert.alert-danger {
 	text-align: center;
 	font-size: 1.1em;
