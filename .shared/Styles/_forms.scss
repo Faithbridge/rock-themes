@@ -258,6 +258,42 @@
     }
   }
 
+  .picker-select-item-details {
+    margin: $base-spacing-unit $base-spacing-unit/2 $base-spacing-unit 0;
+
+    .contents {
+      font-family: "colfax-web", $base-font-family;
+      font-size: 1em;
+      line-height: 1.5em;
+
+      h5 {
+        margin-bottom: $base-spacing-unit / 4;
+      }
+
+      p,
+      em,
+      strong {
+        font-family: "colfax-web", $base-font-family;
+        font-size: inherit;
+      }
+
+      p {
+        margin-top: $base-spacing-unit / 4;
+      }
+
+      small {
+        font-weight: 500;
+        margin-left: $base-spacing-unit / 4;
+      }
+
+      em {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+      }
+    }
+  }
+
   .picker-actions {
     margin-top: $base-spacing-unit*2;
 
@@ -426,8 +462,8 @@ select {
 
   .picker-select-none {
     position: absolute;
-    top: 38px;
-    right: 0;
+    top: $base-spacing-unit;
+    right: $base-spacing-unit / 4;
 
     display: block;
 
