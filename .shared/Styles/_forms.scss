@@ -15,11 +15,42 @@
   }
 }
 
+.actions a.btn {
+  @extend .btn--small;
+
+  &.btn-default {
+    color: map-get($colors, dark-tertiary);
+    border-color: map-get($colors, dark-tertiary);
+
+    &:hover {
+      background-color: map-get($colors, dark-tertiary);
+      color: map-get($colors, light-primary);
+    }
+  }
+
+  &:focus {
+    border-width: 2px;
+  }
+}
+
+.numberincrement {
+  text-align: center;
+
+  a {
+    border-radius: 10000px;
+    border-width: 2px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 .fileupload-dropzone {
   margin-top: $base-spacing-unit / 3;
 
   span {
-    display: none;  
+    display: none;
   }
 
   input {
@@ -354,10 +385,11 @@
 
 .control-label {
   font-weight: 500;
-  line-height: 1.125;
-  font-size: .875em;
+  line-height: 1.5;
+  letter-spacing: 0.15px;
   padding-left: 5px;
   color: map-get($colors , dark-secondary);
+  margin-bottom: $base-spacing-unit * 0.75;
 
   small {
     @extend p;
@@ -382,16 +414,35 @@
   }
 }
 
+.birthday-picker {
+  span {
+    @extend .one-twelfth;
+    @extend .grid__item;
+    vertical-align: middle;
+  }
+  select {
+    @extend .three-twelfths;
+    @extend .grid__item;
+    vertical-align: middle;
+  }
+}
+
 select,
 input,
 textarea {
   color: $dark-color;
+  font-size: 1em;
+  letter-spacing: 0.15px;
 };
+
+textarea {
+  line-height: 1.5em;
+}
 
 select {
   position: relative;
   z-index: 100;
-  // background-image: url('/Themes/Workflows/assets/images/drop-down.png');
+  // background-image: url('https://rock.newspring.cc/Themes/Workflows/assets/images/drop-down.png');
   background-repeat: no-repeat;
   background-position: 98% 50%;
   background-size: $base-font-size*.75;

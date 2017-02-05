@@ -2730,6 +2730,7 @@ h4,
 .fileupload-dropzone .person-picker .picker-label,
 .person-picker .fileupload-dropzone .picker-label,
 .btn--small,
+.actions a.btn,
 .btn--disabled,
 .btn:disabled,
 .fileupload-dropzone input:disabled,
@@ -3143,6 +3144,7 @@ textarea[data-value]:not([data-value=""]) {
 .fileupload-dropzone .person-picker .picker-label,
 .person-picker .fileupload-dropzone .picker-label,
 .btn--small,
+.actions a.btn,
 .btn--disabled,
 .btn:disabled,
 .fileupload-dropzone input:disabled,
@@ -3174,6 +3176,7 @@ textarea[data-value]:not([data-value=""]) {
 .fileupload-dropzone .person-picker .picker-label:hover,
 .person-picker .fileupload-dropzone .picker-label:hover,
 .btn--small:hover,
+.actions a.btn:hover,
 .btn--disabled:hover,
 .btn--corners:hover,
 .btn--light:hover,
@@ -3189,7 +3192,8 @@ textarea[data-value]:not([data-value=""]) {
 	background: #6bac43;
 }
 
-.btn--small {
+.btn--small,
+.actions a.btn {
 	padding: 11.5px 30px 11.5px;
 	border: 2px solid #6bac43;
 	font-size: 18.75px;
@@ -3637,6 +3641,8 @@ html.modal--opened .scrollable {
 .col-lg-10,
 .col-lg-11,
 .col-lg-12,
+.birthday-picker span,
+.birthday-picker select,
 .grid__item--push-bottom,
 .toggle__item,
 .toggle__item--active {
@@ -3712,7 +3718,9 @@ html.modal--opened .scrollable {
 .grid--rev > .col-lg-9,
 .grid--rev > .col-lg-10,
 .grid--rev > .col-lg-11,
-.grid--rev > .col-lg-12 {
+.grid--rev > .col-lg-12,
+.birthday-picker .grid--rev > span,
+.birthday-picker .grid--rev > select {
 	direction: ltr;
 	text-align: left;
 }
@@ -4282,7 +4290,8 @@ html.modal--opened .scrollable {
 .one-quarter,
 .col-sm-3,
 .two-eighths,
-.three-twelfths {
+.three-twelfths,
+.birthday-picker select {
 	width: 25%;
 }
 
@@ -4381,7 +4390,8 @@ html.modal--opened .scrollable {
 	width: 90%;
 }
 
-.one-twelfth {
+.one-twelfth,
+.birthday-picker span {
 	width: 8.3333333%;
 }
 
@@ -5614,6 +5624,33 @@ Copyright (c) 2012 Dan Eden*/
 	right: 0;
 }
 
+.actions a.btn.btn-default {
+	color: #858585;
+	border-color: #858585;
+}
+
+.actions a.btn.btn-default:hover {
+	background-color: #858585;
+	color: #ffffff;
+}
+
+.actions a.btn:focus {
+	border-width: 2px;
+}
+
+.numberincrement {
+	text-align: center;
+}
+
+.numberincrement a {
+	border-radius: 10000px;
+	border-width: 2px;
+}
+
+.numberincrement a:hover {
+	cursor: pointer;
+}
+
 .fileupload-dropzone {
 	margin-top: 6.66667px;
 }
@@ -5987,10 +6024,11 @@ Copyright (c) 2012 Dan Eden*/
 
 .control-label {
 	font-weight: 500;
-	line-height: 1.125;
-	font-size: .875em;
+	line-height: 1.5;
+	letter-spacing: 0.15px;
 	padding-left: 5px;
 	color: #505050;
+	margin-bottom: 15px;
 }
 
 .control-label small {
@@ -6010,11 +6048,25 @@ Copyright (c) 2012 Dan Eden*/
 	outline: none;
 }
 
+.birthday-picker span {
+	vertical-align: middle;
+}
+
+.birthday-picker select {
+	vertical-align: middle;
+}
+
 select,
 input,
 .person-picker .picker-label,
 textarea {
 	color: #303030;
+	font-size: 1em;
+	letter-spacing: 0.15px;
+}
+
+textarea {
+	line-height: 1.5em;
 }
 
 select {
