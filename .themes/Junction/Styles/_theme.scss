@@ -82,6 +82,13 @@ $fonts: (
       line-height: $line-height-ratio,
       margin-bottom: $base-spacing-unit
     ),
+    ul: (
+      font-family: "ff-meta-serif-web-pro",
+      font-size: $base-font-size/16px * 1em,
+      line-height: $line-height-ratio * 1.25,
+      letter-spacing: 0.15px,
+      margin-bottom: $base-spacing-unit
+    ),
     em: (
       font-family: "ff-meta-serif-web-pro",
       font-style: italic,
@@ -106,7 +113,8 @@ $typography: (
   small: meta-serif,
   strong: meta-serif,
   em: meta-serif,
-  label: colfax
+  label: colfax,
+  ul: meta-serif,
 );
 
 // constrains
