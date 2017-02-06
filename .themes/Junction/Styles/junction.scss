@@ -468,6 +468,17 @@ section {
 
 }
 
+// Datepicker
+
+.datepicker {
+  position: absolute;
+  z-index: 100;
+}
+
+.datepicker-orient-bottom {
+  margin-top: $base-spacing-unit * .55;
+}
+
 // Loader
 
 #updateProgress {

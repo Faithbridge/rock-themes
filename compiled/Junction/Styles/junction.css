@@ -6951,6 +6951,15 @@ input + .btn,
 	border-color: #303030;
 }
 
+.datepicker {
+	position: absolute;
+	z-index: 100;
+}
+
+.datepicker-orient-bottom {
+	margin-top: 11px;
+}
+
 #updateProgress {
 	z-index: 200;
 }
