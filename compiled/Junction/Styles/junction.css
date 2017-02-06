@@ -2826,6 +2826,15 @@ label,
 	line-height: 1.125;
 }
 
+ul,
+.ul {
+	font-family: "ff-meta-serif-web-pro";
+	font-size: 1.125em;
+	line-height: 1.38889;
+	letter-spacing: 0.15px;
+	margin-bottom: 20px;
+}
+
 a {
 	position: relative;
 	word-wrap: break-word;
@@ -3642,7 +3651,7 @@ html.modal--opened .scrollable {
 .col-lg-11,
 .col-lg-12,
 .birthday-picker span,
-.birthday-picker select,
+.birthday-picker .select,
 .grid__item--push-bottom,
 .toggle__item,
 .toggle__item--active {
@@ -3720,7 +3729,7 @@ html.modal--opened .scrollable {
 .grid--rev > .col-lg-11,
 .grid--rev > .col-lg-12,
 .birthday-picker .grid--rev > span,
-.birthday-picker .grid--rev > select {
+.birthday-picker .grid--rev > .select {
 	direction: ltr;
 	text-align: left;
 }
@@ -4291,7 +4300,7 @@ html.modal--opened .scrollable {
 .col-sm-3,
 .two-eighths,
 .three-twelfths,
-.birthday-picker select {
+.birthday-picker .select {
 	width: 25%;
 }
 
@@ -5651,6 +5660,11 @@ Copyright (c) 2012 Dan Eden*/
 	cursor: pointer;
 }
 
+.numberincrement i {
+	width: 18px;
+	height: 18px;
+}
+
 .fileupload-dropzone {
 	margin-top: 6.66667px;
 }
@@ -5707,14 +5721,17 @@ Copyright (c) 2012 Dan Eden*/
 }
 
 .rock-drop-down-list,
-.campus-picker {
+.campus-picker,
+.select {
 	position: relative;
 }
 
 .rock-drop-down-list:before,
 .rock-drop-down-list:before,
 .campus-picker:before,
-.campus-picker:before {
+.campus-picker:before,
+.select:before,
+.select:before {
 	position: absolute;
 	right: 10px;
 	bottom: 15px;
@@ -5722,7 +5739,8 @@ Copyright (c) 2012 Dan Eden*/
 }
 
 .rock-drop-down-list:before,
-.campus-picker:before {
+.campus-picker:before,
+.select:before {
 	content: "\f0d7";
 	font-family: "FontAwesome";
 }
@@ -6052,8 +6070,9 @@ Copyright (c) 2012 Dan Eden*/
 	vertical-align: middle;
 }
 
-.birthday-picker select {
+.birthday-picker .select {
 	vertical-align: middle;
+	padding-left: 0;
 }
 
 select,
@@ -6824,7 +6843,9 @@ input + .btn,
 .numberincrement-down,
 .numberincrement-up {
 	border: 3px solid;
-	padding: 8px 12px;
+	padding: 10px;
+	width: 44px;
+	height: 44px;
 	margin: 10px;
 	display: inline-block;
 	border-radius: 2px;
